@@ -5,28 +5,45 @@
     <title>Join Page</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <style>
+    .md-4{
+        background-color: azure;
+        border: black 1px solid;
+    }
+    .btn-info{
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    .col-md-5{
+        margin-top: 15px;
+    }
+    </style>
 </head>
 <body>
-<div class="container mt-4">
-    <a href="">Main Page</a>&nbsp&nbsp
-    <a href="">Sign up</a><br><br>
-    <h1>REGISTRATION FORM</h1>
-    <form action="" method="post">
-        <label for="name"> Name: </label>
-        <input type="text" class="form-control" name = "Name" id = "name" placeholder="Name"><br>
-        <label for="surname"> Surname: </label>
-        <input type= "text" class="form-control" name = "Surname" id = "surname" placeholder="Surname"><br>
-        <label for="login"> Login: </label>
-        <input type="text" class="form-control" name = "Login" id = "login" placeholder="Login"> <br>
-        <label for="pass"> Password: </label>
-        <input type="password" class="form-control" name = "Pass" id = "pass" placeholder="Password"><br>
-        <label for="country"> Country: </label>
-        <input type="text" class="form-control" name = "Country" id = "country" placeholder="Country"><br>
-        <input type="checkbox" id="agreePP" name="agteeBox">
-        <label for="agreePP"> I agree Privacy Politics </label><br><br>
-        <button class="btn btn-success" type = "submit">Register</button>
-        <br>
-    </form>
-</div>
+    <div class="container text-right">
+        <button onclick = "" class="btn btn-info">Main Page</button>&nbsp&nbsp
+        <button class="btn btn-info" type = "submit">Sign in</button>
+    </div>
+    <div class="container md-4">
+        <div class="container col-md-5">
+            <h1><b>REGISTRATION FORM</b></h1>
+            <form action="" method="post">
+                <label for="name"> Name: </label>
+                <input type="text" class="form-control" name = "Name" id = "name" placeholder="Name"><br>
+                <label for="surname"> Surname: </label>
+                <input type= "text" class="form-control" name = "Surname" id = "surname" placeholder="Surname"><br>
+                <label for="login"> Login: </label>
+                <input type="text" class="form-control" name = "Login" id = "login" placeholder="Login"> <br>
+                <label for="pass"> Password: </label>
+                <input type="password" class="form-control" name = "Pass" id = "pass" placeholder="Password"><br>
+                <label for="country"> Country: </label>
+                <input type="text" class="form-control" name = "Country" id = "country" placeholder="Country"><br>
+                <input type="checkbox" id="agreePP" name="agteeBox">
+                <label for="agreePP">  Agree to Privacy Policy </label><br><br>
+                <button class="btn btn-success" type = "submit">Register</button>
+                <br><br>
+            </form>
+        </div>
+    </div>
 </body>
 </html>
