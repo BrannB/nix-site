@@ -5,10 +5,12 @@
     <title>Join Page</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
     <style>
     .md-4{
         background-color: azure;
         border: black 1px solid;
+        margin-bottom: 50px;
     }
     .btn-info{
         margin-top: 10px;
@@ -21,8 +23,19 @@
 </head>
 <body>
     <div class="container text-right">
-        <button onclick = "" class="btn btn-info">Main Page</button>&nbsp&nbsp
-        <button class="btn btn-info" type = "submit">Sign in</button>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#">MyStore</a>
+            <div class="collapse navbar-collapse" id="navbarText">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                </ul>
+                <span class="navbar-text">
+                     <button class="btn btn-info" type = "submit">Sign in</button>
+                </span>
+            </div>
+        </nav>
     </div>
     <div class="container md-4">
         <div class="container col-md-5">
