@@ -1,6 +1,8 @@
 <?php
+define('App', __DIR__);
+spl_autoload_register(function ($class) {
 
-    spl_autoload_register(function ($class_name)
-    {
-        include $class_name . ".php";
-    });
+    $file = App .'/'. str_replace('\\', DIRECTORY_SEPARATOR, $class) . '.php';
+
+    if (file_exists($file)) require($file);
+});

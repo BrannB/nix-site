@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,40 +7,37 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <style>
 
-    .product-item{
-        margin-top: 20px;
+        .product-item{
+            margin-top: 20px;
 
-    }
-    .mt-4{
+        }
+        .mt-4{
 
-        background-color: azure;
-        border: black solid 2px;
-    }
+            background-color: azure;
+            border: black solid 2px;
+        }
     </style>
 </head>
 <body>
 
-    <div class="container text-right">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="#">MyStore</a>
-            <div class="collapse navbar-collapse" id="navbarText">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="#">Home</a>
-                    </li>
-                </ul>
-                <span class="navbar-text">
+<div class="container text-right">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">MyStore</a>
+        <div class="collapse navbar-collapse" id="navbarText">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home</a>
+                </li>
+            </ul>
+            <span class="navbar-text">
                     <button onclick="" class="btn btn-info">Join Us</button>
                      <button onclick="" class="btn btn-info">Sign in</button>
                 </span>
-            </div>
-        </nav>
-    </div>
+        </div>
+    </nav>
+</div>
 
-
-
-
-    <div class="container mt-4">
+<div class="container mt-4">
     <ol>
         <li>
             <div class="product-item">
@@ -79,6 +75,6 @@
     <div class="text-right">
         <button type="button" class="btn btn-success">Buy</button>
     </div>
-
 </div>
 </body>
+</html>
