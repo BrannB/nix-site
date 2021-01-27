@@ -4,8 +4,8 @@
 
     // криво работает (исправлю чуть позже)
     #require_once "../autoloader.php";
-    require_once ("../classes/Storage.php");
-    require_once ("../classes/Templeater.php");
+    require_once("../classes/Storage.php");
+    require_once("../classes/Templeater.php");
     require_once("../classes/logger/LoggerInterface.php");
     require_once("../classes/logger/Logger.php");
     require_once("../classes/logger/LogLevel.php");
