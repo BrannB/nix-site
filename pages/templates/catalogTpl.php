@@ -1,18 +1,22 @@
-<?php
+
+    <?php
     foreach ($products as $item): ?>
         <?php extract($item) ?>
-            <div class="product-item" id="<?php echo $item['id']?>">
-                <div class="row">
-                    <div class="col-sm-6">
-                        <div class="catalog-card card">
-                            <div class="card-body">
-                                <h5 class="card-title"><?php echo $item['name']?></h5>
-                                <p class="card-text"><?php echo $item['desc']?> <?php echo $item['price']?></p>
-                                <a href="#" class="btn btn-primary">View product</a>
-                                <a href="#" class="btn btn-success">Buy</a><br>
-                                <em><?php echo $item['status']?></em>
-                            </div>
-                        </div>
+
+            <div class="card">
+                <img src= "<?php echo $item["img"]?>" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title"><?php echo $item['name']?></h5>
+                    <p class="card-text"><?php echo $item['desc']?></p>
+                    <p class="card-text"><small class="text-muted"><?php echo $item['status']?></small></p>
+                    <div class="text text-right">
+                        <h3><b><?php echo $item['price']?></b></h3>
+                        <button href="#" class="btn btn-primary"> View </button>
+                        <button href="#" class="btn btn-success"> Buy </button>
+
                     </div>
+
                 </div>
+            </div>
+    <br>
     <?php endforeach ?>
