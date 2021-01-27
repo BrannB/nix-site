@@ -7,10 +7,10 @@
     <input class = "catalog-search search"  type="text" name="searchResult" id="search"><br><br>
 </form>
 <div class="catalog-mt-4 container mt-4">
-    <div class="text-right">
+
         <ui>
             <?php echo $content ?>
         </ui>
-    </div>
+
 </div>
 
