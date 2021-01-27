@@ -6,12 +6,9 @@ class Storage
      * @var array
      */
     private $products;
-    private $logger;
-
-    public function __construct(array $products, $logger)
+    public function __construct(array $products)
     {
         $this->products = $products;
-        $this->logger = $logger;
     }
 
     /**
@@ -23,7 +20,6 @@ class Storage
             if ($id == $prod['id'])
                 return $prod;
         return [];
-
     }
 
 }
