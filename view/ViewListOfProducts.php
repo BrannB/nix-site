@@ -1,6 +1,6 @@
 <?php
 
-$products = require_once('../storage/stock.php');
+$products = require_once('../storage/Stock.php');
 
 foreach ($products as $item): ?>
     <?php extract($item) ?>

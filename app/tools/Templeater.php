@@ -1,17 +1,19 @@
 <?php
 
+namespace app\tools;
+
 class Templeater
 {
     public function renderContent($template, $layout, array $products)
     {
-        $layouts = __DIR__ . "/../pages/layout/";
-        $templates = __DIR__ . "/../pages/templates/";
+        $layouts = __DIR__ . "/../../view/pages/layout/";
+        $templates = __DIR__ . "/../../view/pages/templates/";
 
-        require_once "../pages/header.php";
+        require_once "../view/pages/header.php";
         ob_start();
         require_once $templates . $template . ".php";
         $content = ob_get_clean();
         require_once $layouts . $layout . ".php";
-        require_once "../pages/footer.php";
+        require_once "../view/pages/footer.php";
     }
 }
