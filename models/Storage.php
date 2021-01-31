@@ -23,7 +23,6 @@ class Storage
             if ($id == $prod['id'])
                 return $prod;
         return [];
-
     }
 
 }
