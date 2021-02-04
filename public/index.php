@@ -2,21 +2,19 @@
     error_reporting(E_ALL);
     ini_set('display_errors', 1);
 
-    require_once '../autoloader.php';
-    require_once '../app/router/Router.php';
+    require_once "../vendor/autoload.php";
     require_once '../app/config/routes.php';
 
-    use app\tools\logger\Logger;
     use app\tools\Exceptions\NewException;
+    use app\sessions\Session;
 
-    $logger1 = new Logger();
-    try
-    {
+    $session = new Session();
+    $session->start();
+    try {
         $router = new Router();
         $router->matchRoute();
-    }
-    catch (NewException $error)
-    {
+
+    } catch (NewException $error) {
        echo $error->getMessage();
     }
 
