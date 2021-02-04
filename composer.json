@@ -1,0 +1,26 @@
+{
+    "name": "alex/mysite",
+    "authors": [
+        {
+            "name": "Alexandr Podluzhnyi",
+            "email": "sanchoman314@gmail.com"
+        }
+    ],
+    "autoload": {
+        "classmap": [
+            "app/router/Router.php"
+        ],
+        "psr-4": {
+            "app\\tools\\": "app/tools/",
+            "app\\tools\\Exceptions\\": "app/tools/Exceptions/",
+            "Authentication\\" : "Authentication/",
+            "app\\controllers\\": "app/controllers/",
+            "app\\sessions\\": "app/sessions/",
+            "models\\": "models/"
+        },
+        "require": {}
+    },
+    "require": {
+        "monolog/monolog": "^2.2"
+    }
+}
