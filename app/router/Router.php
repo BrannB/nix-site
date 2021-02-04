@@ -1,5 +1,7 @@
 <?php
 
+
+
 use app\tools\logger\Logger;
 
 class Router
@@ -43,7 +45,6 @@ class Router
 
     public function matchRoute()
     {
-        echo self::getUrl();
         if (self::routeCheck(self::getUrl()))
         {
             $controller = ucfirst(self::$route['controller']) . "Controller";

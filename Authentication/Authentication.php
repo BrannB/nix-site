@@ -2,40 +2,42 @@
 
 namespace Authentication;
 
+use app\sessions\Session;
+
 class Authentication
 {
-    public $login;
-    public $pass;
+    public $login = 'login';
+    public $pass = 'pass';
+    public Session $session;
 
-    public function auth($login, $pass) : bool
+    public function __construct()
     {
-        $this->login = $login;
-        $this->pass = $pass;
-        return true;
+        $this->session = new Session();
     }
 
     public function isAuth(): bool
     {
-        if (($this->login == 'login') && ($this->pass == 'pass'))
-        {
+        return $this->session->sessionExists();
+    }
+    public function auth(string $login, string $pass): bool
+    {
+        if ($this->login == $login && $this->pass == $pass) {
+            $this->session->start();
+            $this->session->set('name', $login);
+            $this->session->set('pass', $pass);
             return true;
-        }
-        else
-        {
+        } else {
             return false;
         }
     }
 
     public function getLogin(): string
     {
-        return $this->login;
+        return $this->session->get('name');
     }
 
     public function logOut(): void
     {
-        session_abort();
-
-        session_start();
-        session_abort();
+        $this->session->destroy();
     }
 }
