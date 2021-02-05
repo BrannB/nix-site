@@ -6,7 +6,7 @@ use app\sessions\Session;
 
 class Authentication
 {
-    public $login = 'login';
+    public $login = 'sasha';
     public $pass = 'pass';
     public Session $session;
 
@@ -17,14 +17,17 @@ class Authentication
 
     public function isAuth(): bool
     {
-        return $this->session->sessionExists();
+        if($this->session->contains('name'))
+            return $this->session->sessionExists();
+        else return false;
     }
+
     public function auth(string $login, string $pass): bool
     {
         if ($this->login == $login && $this->pass == $pass) {
             $this->session->start();
             $this->session->set('name', $login);
-            $this->session->set('pass', $pass);
+            //$this->session->set('pass', $pass);
             return true;
         } else {
             return false;
