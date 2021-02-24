@@ -31,6 +31,6 @@ Router::addRoute('^register/reg$', [
 
 Router::addRoute('^signin/auth$', [
     'controller' => 'signIn',
-    "action" => "authorization"
+    "action" => "authentication"
 ]);
 

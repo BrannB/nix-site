@@ -2,7 +2,6 @@
 
 namespace app\models;
 use app\services\UserService;
-use models\DefaultModel;
 
 class User
 {
@@ -15,14 +14,12 @@ class User
 
     public function checkUserExistByEmail($email)
     {
-        $user = $this->userService->getByEmail($email);
-        return $user;
+        return $this->userService->getByEmail($email);
     }
 
     public function checkUserExistByUname($uname)
     {
-        $user = $this->userService->getByUname($uname);
-        return $user;
+        return $this->userService->getByUname($uname);
     }
 
     public function createUser($fname, $lname, $email, $uname, $pass, $country): bool

@@ -8,7 +8,11 @@
     ],
     "autoload": {
         "classmap": [
-            "app/router/Router.php"
+            "models/User.php",
+            "app/services/UserService.php",
+            "app/router/Router.php",
+            "app/config/config.php",
+            "app/DB.php"
         ],
         "psr-4": {
             "app\\tools\\": "app/tools/",
@@ -21,6 +25,7 @@
         "require": {}
     },
     "require": {
-        "monolog/monolog": "^2.2"
+        "monolog/monolog": "^2.2",
+        "niksteklo34/logger": "@dev"
     }
 }
