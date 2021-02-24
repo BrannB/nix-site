@@ -3,34 +3,31 @@
 namespace app\controllers;
 
 use app\tools\Templeater;
+use Authentication\Authentication;
 
 class SignInController
 {
     public array $route;
+    public Authentication $auth;
 
     public function __construct(array $route)
     {
         $this->route = $route;
+        $this->auth = new Authentication();
     }
 
-    public function authorization()
+    public function authentication()
     {
-        if (!empty($_POST['name'])) {
-            $name = trim($_POST['name'], ' ');
-            $surname = trim($_POST['surname'], ' ');
-            $email = trim($_POST['email'], ' ');
-            $password = trim($_POST['password'], ' ');
-
-            $this->auth->setDataForReg($name, $surname, $email, $password);
-            $auth = $this->auth->auth();
-            if ($auth) {
-                $_SESSION['cart_list'] = [];
-                $_SESSION['wish_list'] = [];
-            }
-            header("Location: ../login");
+        $email = $_POST['email'];
+        $pass = $_POST['pass'];
+        $result = $this->auth->auth($email, $pass);
+        if($result)
+        {
+            header("Location: ../member");
+        } else {
+            echo "Incorrect values";
         }
     }
-
 
     public function Index()
     {
