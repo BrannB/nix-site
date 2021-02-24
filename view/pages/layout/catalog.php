@@ -9,7 +9,7 @@
 <div class="catalog-mt-4 container mt-4">
 
         <ui>
-            <?php echo $content ?>
+            <?php echo $template ?>
         </ui>
 
 </div>

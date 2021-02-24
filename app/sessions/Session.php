@@ -4,6 +4,17 @@ namespace app\sessions;
 
 class Session
 {
+    private static $instance;
+
+    public static function getInstance() : Session
+    {
+        if (self::$instance === null) {
+            self::$instance = new self();
+        }
+
+        return self::$instance;
+    }
+
     public function start(): bool
     {
         session_start();
@@ -85,5 +96,14 @@ class Session
     public function delete($key): void
     {
         unset($_SESSION[$key]);
+    }
+
+    public function keyExists($key) : bool
+    {
+        if (array_key_exists("$key", $_SESSION)) {
+            return true;
+        } else {
+            return false;
+        }
     }
 }

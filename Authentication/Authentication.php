@@ -3,16 +3,23 @@
 namespace Authentication;
 
 use app\sessions\Session;
+use app\services\UserService;
+use app\models\User;
+use models\DefaultModel;
 
 class Authentication
 {
-    public $login = 'sasha';
-    public $pass = 'pass';
+    public User $baseUser;
+    public UserService $userService;
     public Session $session;
+    public DefaultModel $defaultModel;
 
     public function __construct()
     {
+        $this->baseUser = new User();
+        $this->userService = new UserService();
         $this->session = new Session();
+        $this->defaultModel = new DefaultModel();
     }
 
     public function isAuth(): bool
@@ -22,15 +29,18 @@ class Authentication
         else return false;
     }
 
-    public function auth(string $login, string $pass): bool
+    public function auth(string $email, string $pass)
     {
-        if ($this->login == $login && $this->pass == $pass) {
+        $userExistByUname = $this->baseUser->checkUserExistByUname($email);
+        var_dump($userExistByUname);
+        if($userExistByUname == $email &&
+            password_verify($pass, $userExistByUname->password))
+        {
             $this->session->start();
-            $this->session->set('name', $login);
-            //$this->session->set('pass', $pass);
+            $this->session->set('name', $userExistByUname->uname);
             return true;
         } else {
-            return false;
+            var_dump($userExistByUname);
         }
     }
 

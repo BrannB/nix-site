@@ -1,7 +1,7 @@
 <?php
 
 Router::addRoute('^$', [
-    'controller' => 'main',
+    'controller' => 'catalog',
     "action" => "index"
 ]);
 
@@ -24,4 +24,13 @@ Router::addRoute('^member$', [
     "action" => "index"
 ]);
 
+Router::addRoute('^register/reg$', [
+    'controller' => 'register',
+    "action" => "register"
+]);
+
+Router::addRoute('^signin/auth$', [
+    'controller' => 'signIn',
+    "action" => "authorization"
+]);
 

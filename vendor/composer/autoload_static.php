@@ -22,6 +22,10 @@ class ComposerStaticInit52ee5796dfa1d310fab2c50a2c4d3b22
         array (
             'Psr\\Log\\' => 8,
         ),
+        'N' => 
+        array (
+            'Niksteklo34\\Logger\\' => 19,
+        ),
         'M' => 
         array (
             'Monolog\\' => 8,
@@ -57,6 +61,10 @@ class ComposerStaticInit52ee5796dfa1d310fab2c50a2c4d3b22
         array (
             0 => __DIR__ . '/..' . '/psr/log/Psr/Log',
         ),
+        'Niksteklo34\\Logger\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/niksteklo34/logger/src',
+        ),
         'Monolog\\' => 
         array (
             0 => __DIR__ . '/..' . '/monolog/monolog/src/Monolog',
@@ -70,6 +78,9 @@ class ComposerStaticInit52ee5796dfa1d310fab2c50a2c4d3b22
     public static $classMap = array (
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
         'Router' => __DIR__ . '/../..' . '/app/router/Router.php',
+        'app\\DB' => __DIR__ . '/../..' . '/app/DB.php',
+        'app\\models\\User' => __DIR__ . '/../..' . '/models/User.php',
+        'app\\services\\UserService' => __DIR__ . '/../..' . '/app/services/UserService.php',
     );
 
     public static function getInitializer(ClassLoader $loader)

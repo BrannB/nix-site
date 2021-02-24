@@ -12,6 +12,7 @@ return array(
     'app\\sessions\\' => array($baseDir . '/app/sessions'),
     'app\\controllers\\' => array($baseDir . '/app/controllers'),
     'Psr\\Log\\' => array($vendorDir . '/psr/log/Psr/Log'),
+    'Niksteklo34\\Logger\\' => array($vendorDir . '/niksteklo34/logger/src'),
     'Monolog\\' => array($vendorDir . '/monolog/monolog/src/Monolog'),
     'Authentication\\' => array($baseDir . '/Authentication'),
 );

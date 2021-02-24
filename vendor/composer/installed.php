@@ -29,6 +29,16 @@
       ),
       'reference' => '1cb1cde8e8dd0f70cc0fe51354a59acad9302084',
     ),
+    'niksteklo34/logger' => 
+    array (
+      'pretty_version' => 'dev-master',
+      'version' => 'dev-master',
+      'aliases' => 
+      array (
+        0 => '9999999-dev',
+      ),
+      'reference' => '78ea5ec970c1d16531e9b08e3eb35c2b1cd826b4',
+    ),
     'psr/log' => 
     array (
       'pretty_version' => '1.1.3',

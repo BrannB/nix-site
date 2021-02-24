@@ -10,10 +10,13 @@ class Templeater
         $templates = __DIR__ . "/../../view/pages/templates/";
 
         require_once "../view/pages/header.php";
+
         ob_start();
         require_once $templates . $template . ".php";
-        $content = ob_get_clean();
+        $template = ob_get_clean();
+
         require_once $layouts . $layout . ".php";
+
         require_once "../view/pages/footer.php";
     }
 }
