@@ -3,7 +3,7 @@
 namespace app\controllers;
 
 use app\tools\Templeater;
-use Authentication\Authentication;
+use framework\Authentication\Authentication;
 
 class SignInController
 {

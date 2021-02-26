@@ -14,7 +14,7 @@ class DB
 
     public function __construct()
     {
-        $dbConfig = require_once dirname(__DIR__) . '/app/config/config.php';
+        $dbConfig = require_once dirname(__DIR__) . '/config/config.php';
         $this->dbConfig = $dbConfig;
     }
 

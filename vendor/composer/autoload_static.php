@@ -39,19 +39,19 @@ class ComposerStaticInit52ee5796dfa1d310fab2c50a2c4d3b22
     public static $prefixDirsPsr4 = array (
         'models\\' => 
         array (
-            0 => __DIR__ . '/../..' . '/models',
+            0 => __DIR__ . '/../..' . '/app/models',
         ),
         'app\\tools\\Exceptions\\' => 
         array (
-            0 => __DIR__ . '/../..' . '/app/tools/Exceptions',
+            0 => __DIR__ . '/../..' . '/framework/tools/Exceptions',
         ),
         'app\\tools\\' => 
         array (
-            0 => __DIR__ . '/../..' . '/app/tools',
+            0 => __DIR__ . '/../..' . '/framework/tools',
         ),
         'app\\sessions\\' => 
         array (
-            0 => __DIR__ . '/../..' . '/app/sessions',
+            0 => __DIR__ . '/../..' . '/framework/sessions',
         ),
         'app\\controllers\\' => 
         array (
@@ -71,16 +71,19 @@ class ComposerStaticInit52ee5796dfa1d310fab2c50a2c4d3b22
         ),
         'Authentication\\' => 
         array (
-            0 => __DIR__ . '/../..' . '/Authentication',
+            0 => __DIR__ . '/../..' . '/framework/Authentication',
         ),
     );
 
     public static $classMap = array (
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
-        'Router' => __DIR__ . '/../..' . '/app/router/Router.php',
-        'app\\DB' => __DIR__ . '/../..' . '/app/DB.php',
-        'app\\models\\User' => __DIR__ . '/../..' . '/models/User.php',
+        'Router' => __DIR__ . '/../..' . '/framework/router/Router.php',
+        'app\\DB' => __DIR__ . '/../..' . '/framework/DataBase/DB.php',
+        'app\\models\\DefaultModel' => __DIR__ . '/../..' . '/app/models/DefaultModel.php',
+        'app\\models\\Product' => __DIR__ . '/../..' . '/app/models/Product.php',
+        'app\\models\\User' => __DIR__ . '/../..' . '/app/models/User.php',
         'app\\services\\UserService' => __DIR__ . '/../..' . '/app/services/UserService.php',
+        'framework\\Authentication\\Authentication' => __DIR__ . '/../..' . '/framework/Authentication/Authentication.php',
     );
 
     public static function getInitializer(ClassLoader $loader)

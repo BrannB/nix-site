@@ -6,13 +6,13 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'models\\' => array($baseDir . '/models'),
-    'app\\tools\\Exceptions\\' => array($baseDir . '/app/tools/Exceptions'),
-    'app\\tools\\' => array($baseDir . '/app/tools'),
-    'app\\sessions\\' => array($baseDir . '/app/sessions'),
+    'models\\' => array($baseDir . '/app/models'),
+    'app\\tools\\Exceptions\\' => array($baseDir . '/framework/tools/Exceptions'),
+    'app\\tools\\' => array($baseDir . '/framework/tools'),
+    'app\\sessions\\' => array($baseDir . '/framework/sessions'),
     'app\\controllers\\' => array($baseDir . '/app/controllers'),
     'Psr\\Log\\' => array($vendorDir . '/psr/log/Psr/Log'),
     'Niksteklo34\\Logger\\' => array($vendorDir . '/niksteklo34/logger/src'),
     'Monolog\\' => array($vendorDir . '/monolog/monolog/src/Monolog'),
-    'Authentication\\' => array($baseDir . '/Authentication'),
+    'Authentication\\' => array($baseDir . '/framework/Authentication'),
 );
