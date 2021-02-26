@@ -3,8 +3,8 @@
 namespace app\controllers;
 use app\sessions\Session;
 use app\tools\Templeater;
-use models\DefaultModel;
-use models\Product;
+use app\models\DefaultModel;
+use app\models\Product;
 
 class CatalogController
 {

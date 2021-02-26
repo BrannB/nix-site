@@ -2,7 +2,7 @@
 
 
 
-use app\tools\logger\Logger;
+use Niksteklo34\Logger\Logger;
 
 class Router
 {

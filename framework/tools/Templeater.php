@@ -6,8 +6,8 @@ class Templeater
 {
     public function renderContent($template, $layout, array $products)
     {
-        $layouts = __DIR__ . "/../../view/pages/layout/";
-        $templates = __DIR__ . "/../../view/pages/templates/";
+        $layouts = __DIR__ . "/../../app/view/pages/layout/";
+        $templates = __DIR__ . "/../../app/view/pages/templates/";
 
         require_once "../view/pages/header.php";
 

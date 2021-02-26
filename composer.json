@@ -8,19 +8,22 @@
     ],
     "autoload": {
         "classmap": [
-            "models/User.php",
+            "app/models/User.php",
+            "app/models/DefaultModel.php",
             "app/services/UserService.php",
-            "app/router/Router.php",
-            "app/config/config.php",
-            "app/DB.php"
+            "framework/router/Router.php",
+            "framework/config/config.php",
+            "framework/DataBase/DB.php",
+            "framework/Authentication/Authentication.php",
+            "app/models/Product.php"
         ],
         "psr-4": {
-            "app\\tools\\": "app/tools/",
-            "app\\tools\\Exceptions\\": "app/tools/Exceptions/",
-            "Authentication\\" : "Authentication/",
+            "app\\tools\\": "framework/tools/",
+            "app\\tools\\Exceptions\\": "framework/tools/Exceptions/",
+            "Authentication\\" : "framework/Authentication/",
             "app\\controllers\\": "app/controllers/",
-            "app\\sessions\\": "app/sessions/",
-            "models\\": "models/"
+            "app\\sessions\\": "framework/sessions/",
+            "models\\": "app/models/"
         },
         "require": {}
     },

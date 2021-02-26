@@ -1,7 +1,7 @@
 
 <div class= "register text-center">
         <?php
-            use Authentication\Authentication;
+            use framework\Authentication\Authentication;
             $auth = new Authentication();
             if($auth->isAuth())
             {
