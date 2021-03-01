@@ -54,11 +54,6 @@ Router::addRoute('^bucket/remove$', [
     "action" => "remove"
 ]);
 
-Router::addRoute('^bucket/setAmount$', [
-    'controller' => 'bucket',
-    "action" => "setAmount"
-]);
-
 Router::addRoute('^main$', [
     'controller' => 'main',
     "action" => "index"
