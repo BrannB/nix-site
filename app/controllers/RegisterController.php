@@ -3,8 +3,8 @@
 namespace app\controllers;
 
 use app\tools\Templeater;
-use Authentication\Authentication;
-use app\models\User;
+use framework\Authentication\Authentication;
+use framework\models\User;
 use app\sessions\Session;
 
 class RegisterController
@@ -29,10 +29,10 @@ class RegisterController
         $_ERRORS = array();
 
         $userExistByEmail = $this->baseUser->checkUserExistByEmail($email);
-        if ($userExistByEmail)
+        if (!empty($userExistByEmail))
             $_ERRORS[] = "This email-box has been already registered";
         $userExistByUname = $this->baseUser->checkUserExistByUname($email);
-        if ($userExistByUname)
+        if (!empty($userExistByUname))
             $_ERRORS[] = "This username has been already registered";
         if($pass !== $passConfirm)
             $_ERRORS[] = "Passwords are not same";

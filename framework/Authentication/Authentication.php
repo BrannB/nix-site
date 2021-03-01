@@ -1,11 +1,11 @@
 <?php
 
-namespace Authentication;
+namespace framework\Authentication;
 
 use app\sessions\Session;
 use app\services\UserService;
 use app\models\User;
-use models\DefaultModel;
+use app\models\DefaultModel;
 
 class Authentication
 {
@@ -18,7 +18,7 @@ class Authentication
     {
         $this->baseUser = new User();
         $this->userService = new UserService();
-        $this->session = new Session();
+        $this->session = Session::getInstance();
         $this->defaultModel = new DefaultModel();
     }
 
@@ -31,16 +31,19 @@ class Authentication
 
     public function auth(string $email, string $pass)
     {
-        $userExistByUname = $this->baseUser->checkUserExistByUname($email);
-        var_dump($userExistByUname);
-        if($userExistByUname == $email &&
-            password_verify($pass, $userExistByUname->password))
+        $userExist = $this->baseUser->checkUserExistByEmail($email);
+        if(empty($userExist))
+            return false;
+        if($userExist[0]['email'] == $email &&
+            password_verify($pass, $userExist[0]['password']))
         {
-            $this->session->start();
-            $this->session->set('name', $userExistByUname->uname);
+            $this->session->set('id', $userExist[0]['id']);
+            $this->session->set('uname', $userExist[0]['uname']);
+            $this->session->set('name', $userExist[0]['first_name']);
+            $this->session->set('email', $userExist[0]['email']);
             return true;
         } else {
-            var_dump($userExistByUname);
+            return false;
         }
     }
 

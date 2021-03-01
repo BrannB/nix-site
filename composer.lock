@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5253b47014eee2c10741b3ece53f69c6",
+    "content-hash": "053f4700c532d4001931205849928032",
     "packages": [
         {
             "name": "monolog/monolog",
@@ -103,6 +103,41 @@
             "time": "2020-12-14T13:15:25+00:00"
         },
         {
+            "name": "niksteklo34/logger",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/niksteklo34/logger.git",
+                "reference": "78ea5ec970c1d16531e9b08e3eb35c2b1cd826b4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/niksteklo34/logger/zipball/78ea5ec970c1d16531e9b08e3eb35c2b1cd826b4",
+                "reference": "78ea5ec970c1d16531e9b08e3eb35c2b1cd826b4",
+                "shasum": ""
+            },
+            "default-branch": true,
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Niksteklo34\\Logger\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "authors": [
+                {
+                    "name": "nik12",
+                    "email": "email@example.com"
+                }
+            ],
+            "description": "Custom logger",
+            "support": {
+                "issues": "https://github.com/niksteklo34/logger/issues",
+                "source": "https://github.com/niksteklo34/logger/tree/master"
+            },
+            "time": "2021-02-06T10:01:17+00:00"
+        },
+        {
             "name": "psr/log",
             "version": "1.1.3",
             "source": {
@@ -156,7 +191,9 @@
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "niksteklo34/logger": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],
