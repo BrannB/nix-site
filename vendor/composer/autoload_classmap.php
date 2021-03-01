@@ -10,8 +10,12 @@ return array(
     'Router' => $baseDir . '/framework/router/Router.php',
     'app\\DB' => $baseDir . '/framework/DataBase/DB.php',
     'app\\models\\DefaultModel' => $baseDir . '/app/models/DefaultModel.php',
+    'app\\models\\Order' => $baseDir . '/app/models/Order.php',
     'app\\models\\Product' => $baseDir . '/app/models/Product.php',
     'app\\models\\User' => $baseDir . '/app/models/User.php',
+    'app\\services\\OrderService' => $baseDir . '/app/services/OrderService.php',
     'app\\services\\UserService' => $baseDir . '/app/services/UserService.php',
+    'cr\\hashcli\\HashManager' => $vendorDir . '/cr/hashcli/src/HashManager.php',
     'framework\\Authentication\\Authentication' => $baseDir . '/framework/Authentication/Authentication.php',
+    'framework\\sessions\\Session' => $baseDir . '/framework/sessions/Session.php',
 );

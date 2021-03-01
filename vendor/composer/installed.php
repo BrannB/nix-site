@@ -20,6 +20,26 @@
       ),
       'reference' => NULL,
     ),
+    'brann/logger' => 
+    array (
+      'pretty_version' => 'dev-master',
+      'version' => 'dev-master',
+      'aliases' => 
+      array (
+        0 => '9999999-dev',
+      ),
+      'reference' => '1e1c6f815f8b93d570d71d43ddefd143f5babbf8',
+    ),
+    'cr/hashcli' => 
+    array (
+      'pretty_version' => 'dev-master',
+      'version' => 'dev-master',
+      'aliases' => 
+      array (
+        0 => '9999999-dev',
+      ),
+      'reference' => '6ab58fab13b9d54c94a764dbf3fa6812b75d14d8',
+    ),
     'monolog/monolog' => 
     array (
       'pretty_version' => '2.2.0',
