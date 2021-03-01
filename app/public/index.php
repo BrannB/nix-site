@@ -6,8 +6,8 @@
     require_once '../../framework/config/routes.php';
 
     use app\tools\Exceptions\NewException;
-    use app\sessions\Session;
-    use Niksteklo34\Logger\Logger;
+    use framework\sessions\Session;
+    use Brann\Logger\Logger;
 
     $logger = new Logger("errorlogs", "../app/tools/logger/log");
 

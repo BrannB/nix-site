@@ -7,9 +7,9 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'models\\' => array($baseDir . '/app/models'),
+    'brannLogger\\' => array($vendorDir . '/brann/logger/src'),
     'app\\tools\\Exceptions\\' => array($baseDir . '/framework/tools/Exceptions'),
     'app\\tools\\' => array($baseDir . '/framework/tools'),
-    'app\\sessions\\' => array($baseDir . '/framework/sessions'),
     'app\\controllers\\' => array($baseDir . '/app/controllers'),
     'Psr\\Log\\' => array($vendorDir . '/psr/log/Psr/Log'),
     'Niksteklo34\\Logger\\' => array($vendorDir . '/niksteklo34/logger/src'),

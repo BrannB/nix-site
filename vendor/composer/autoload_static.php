@@ -11,11 +11,14 @@ class ComposerStaticInit52ee5796dfa1d310fab2c50a2c4d3b22
         array (
             'models\\' => 7,
         ),
+        'b' => 
+        array (
+            'brannLogger\\' => 12,
+        ),
         'a' => 
         array (
             'app\\tools\\Exceptions\\' => 21,
             'app\\tools\\' => 10,
-            'app\\sessions\\' => 13,
             'app\\controllers\\' => 16,
         ),
         'P' => 
@@ -41,6 +44,10 @@ class ComposerStaticInit52ee5796dfa1d310fab2c50a2c4d3b22
         array (
             0 => __DIR__ . '/../..' . '/app/models',
         ),
+        'brannLogger\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/brann/logger/src',
+        ),
         'app\\tools\\Exceptions\\' => 
         array (
             0 => __DIR__ . '/../..' . '/framework/tools/Exceptions',
@@ -48,10 +55,6 @@ class ComposerStaticInit52ee5796dfa1d310fab2c50a2c4d3b22
         'app\\tools\\' => 
         array (
             0 => __DIR__ . '/../..' . '/framework/tools',
-        ),
-        'app\\sessions\\' => 
-        array (
-            0 => __DIR__ . '/../..' . '/framework/sessions',
         ),
         'app\\controllers\\' => 
         array (
@@ -80,10 +83,14 @@ class ComposerStaticInit52ee5796dfa1d310fab2c50a2c4d3b22
         'Router' => __DIR__ . '/../..' . '/framework/router/Router.php',
         'app\\DB' => __DIR__ . '/../..' . '/framework/DataBase/DB.php',
         'app\\models\\DefaultModel' => __DIR__ . '/../..' . '/app/models/DefaultModel.php',
+        'app\\models\\Order' => __DIR__ . '/../..' . '/app/models/Order.php',
         'app\\models\\Product' => __DIR__ . '/../..' . '/app/models/Product.php',
         'app\\models\\User' => __DIR__ . '/../..' . '/app/models/User.php',
+        'app\\services\\OrderService' => __DIR__ . '/../..' . '/app/services/OrderService.php',
         'app\\services\\UserService' => __DIR__ . '/../..' . '/app/services/UserService.php',
+        'cr\\hashcli\\HashManager' => __DIR__ . '/..' . '/cr/hashcli/src/HashManager.php',
         'framework\\Authentication\\Authentication' => __DIR__ . '/../..' . '/framework/Authentication/Authentication.php',
+        'framework\\sessions\\Session' => __DIR__ . '/../..' . '/framework/sessions/Session.php',
     );
 
     public static function getInitializer(ClassLoader $loader)
