@@ -1,7 +1,7 @@
 <?php
 
 Router::addRoute('^$', [
-    'controller' => 'catalog',
+    'controller' => 'main',
     "action" => "index"
 ]);
 
@@ -32,5 +32,30 @@ Router::addRoute('^register/reg$', [
 Router::addRoute('^signin/auth$', [
     'controller' => 'signIn',
     "action" => "authentication"
+]);
+
+Router::addRoute('^bucket$', [
+    'controller' => 'bucket',
+    "action" => "index"
+]);
+
+Router::addRoute('^catalog/addProduct$', [
+    'controller' => 'catalog',
+    "action" => "addProduct"
+]);
+
+Router::addRoute('^bucket/setAmount$', [
+    'controller' => 'bucket',
+    "action" => "setAmount"
+]);
+
+Router::addRoute('^bucket/remove$', [
+    'controller' => 'bucket',
+    "action" => "remove"
+]);
+
+Router::addRoute('^main$', [
+    'controller' => 'main',
+    "action" => "index"
 ]);
 
