@@ -15,14 +15,16 @@
             "framework/config/config.php",
             "framework/DataBase/DB.php",
             "framework/Authentication/Authentication.php",
-            "app/models/Product.php"
+            "framework/sessions/Session.php",
+            "app/models/Product.php",
+            "app/models/Order.php",
+            "app/services/OrderService.php"
         ],
         "psr-4": {
             "app\\tools\\": "framework/tools/",
             "app\\tools\\Exceptions\\": "framework/tools/Exceptions/",
             "Authentication\\" : "framework/Authentication/",
             "app\\controllers\\": "app/controllers/",
-            "app\\sessions\\": "framework/sessions/",
             "models\\": "app/models/"
         },
         "require": {}
