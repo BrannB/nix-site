@@ -1,7 +1,7 @@
 <?php
 
 namespace app\services;
-use app\DB;
+use framework\DataBase\DB;
 use PDO;
 
 class UserService

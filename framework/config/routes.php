@@ -53,9 +53,17 @@ Router::addRoute('^bucket/remove$', [
     'controller' => 'bucket',
     "action" => "remove"
 ]);
+Router::addRoute('^bucket/makeOrder$', [
+    'controller' => 'bucket',
+    "action" => "makeOrder"
+]);
 
 Router::addRoute('^main$', [
     'controller' => 'main',
+    "action" => "index"
+]);
+Router::addRoute('^viewMyOrders$', [
+    'controller' => 'viewMyOrders',
     "action" => "index"
 ]);
 

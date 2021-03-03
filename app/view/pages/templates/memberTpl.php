@@ -10,16 +10,20 @@
                 <form method="post" action="">
                     <button class="btn btn-danger" name="signout-btn" type="submit">Sign out</button>
                 </form>
+                <br>
+                <form method="post" action="viewMyOrders">
+                    <button class="btn btn-outline-warning" name="signout-btn" type="submit">View my orders</button>
+                </form>
             <?php
                 if (isset($_POST['signout-btn']))
                 {
                     $auth->logOut();
                     header("location: signin");
                 }
-            } else
-                {
+            } else {
                     header("location: signin");
-                }
+            }
             ?>
+
 </div>
 
