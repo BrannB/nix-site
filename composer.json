@@ -18,7 +18,10 @@
             "framework/sessions/Session.php",
             "app/models/Product.php",
             "app/models/Order.php",
-            "app/services/OrderService.php"
+            "app/services/OrderService.php",
+            "framework/DataBase/DB.php",
+            "app/models/Purchase.php",
+            "app/services/PurchaseService.php"
         ],
         "psr-4": {
             "app\\tools\\": "framework/tools/",
@@ -31,6 +34,8 @@
     },
     "require": {
         "monolog/monolog": "^2.2",
-        "niksteklo34/logger": "@dev"
+        "niksteklo34/logger": "@dev",
+        "cr/hashcli": "dev-master",
+        "brann/logger": "dev-master"
     }
 }

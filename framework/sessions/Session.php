@@ -1,6 +1,6 @@
 <?php
 
-namespace app\sessions;
+namespace framework\sessions;
 
 class Session
 {
@@ -78,7 +78,12 @@ class Session
         session_destroy();
     }
 
-    public function set(string $key, string $value): void
+    public function delete($key, $value = null): void
+    {
+        if ($this->sessionExists()) unset($_SESSION[$key][$value]);
+    }
+
+    public function set(string $key, $value): void
     {
         $_SESSION[$key] = $value;
     }
@@ -91,11 +96,6 @@ class Session
     public function get($key)
     {
         return $_SESSION[$key];
-    }
-
-    public function delete($key): void
-    {
-        unset($_SESSION[$key]);
     }
 
     public function keyExists($key) : bool

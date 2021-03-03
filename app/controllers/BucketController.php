@@ -2,18 +2,22 @@
 
 namespace app\controllers;
 
-
+use app\models\Purchase;
+use framework\DataBase\DB;
+use PDO;
 use app\models\User;
 use framework\Authentication\Authentication;
 use app\tools\Templeater;
+use app\models\Order;
 
 class BucketController
 {
     private Authentication $authSession;
     private User $userModel;
-
-    private Templeater $renderClass;
+    private Templeater $templeater;
     private $products;
+    private Order $order;
+    private Purchase $purchase;
 
     public function __construct()
     {
@@ -22,7 +26,14 @@ class BucketController
         }
         $this->userModel = new User();
         $this->authSession = new Authentication();
-        $this->renderClass = new Templeater();
+        $this->templeater = new Templeater();
+        $this->order = new Order();
+        $this->purchase = new Purchase();
+    }
+
+    public function connect(): PDO
+    {
+        return DB::getInstance()->connect();
     }
 
     public function Index() {
@@ -36,10 +47,10 @@ class BucketController
         } else {
             $products = [];
         }
-
         $session = $this->authSession->session;
 
-        $this->renderClass->renderContent($template, $layout, ['products' => $products, 'session' => $session]);
+        $this->templeater->renderContent($template, $layout,
+            ['products' => $products, 'session' => $session]);
     }
 
     public function remove()
@@ -59,6 +70,37 @@ class BucketController
                 $newPrice = $oldPrice - $productPrice;
                 $this->authSession->session->set('finalPrice', $newPrice);
                 header('Location: ../bucket');
+            }
+        }
+    }
+
+    public function makeOrder()
+    {
+        if (!empty($_POST)) {
+            if (isset($_POST['makeOrder'])) {
+                $user_id = $this->authSession->session->get("id");
+                $this->purchase->create(
+                    intval($this->authSession->session->get("id")),
+                    intval($_SESSION['finalPrice']),
+                    'pending'
+                );
+                foreach ($_SESSION['cart_list'] as $key => $value) {
+                    foreach ($_SESSION['cart_list'][$key] as $key1 => $product_id) {
+                        if ($key1 == "id") {
+                            $this->order->create(
+                                intval($user_id),
+                                intval($product_id),
+                                intval($_SESSION['cart_list'][$key]->amount)
+                            );
+                        }
+                    }
+                }
+                $this->authSession->session->set("cart_list", []);
+                echo "<h1 class='text-center'>
+                    Order has been successfully added to your profile!<br> 
+                    You will be redirected to your profile in 5 sec.
+                    </h1>";
+                header("refresh: 5; url=../member");
             }
         }
     }

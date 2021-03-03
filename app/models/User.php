@@ -2,14 +2,21 @@
 
 namespace app\models;
 use app\services\UserService;
+use app\services\OrderService;
 
 class User
 {
     private UserService $userService;
+    public Order $order;
+    public DefaultModel $baseModel;
+    private OrderService $orderService;
 
     public function __construct()
     {
         $this->userService = new UserService();
+        $this->orderService = new OrderService();
+        $this->baseModel = new DefaultModel();
+        $this->order = new Order();
     }
 
     public function checkUserExistByEmail($email)
@@ -46,6 +53,11 @@ class User
     public function update(int $id, $fname, $lname, $email, $uname, $pass, $country): bool
     {
         return ($this->userService->update($id, $fname, $lname, $email, $uname, $pass, $country));
+    }
+
+    public function makeOrder($user_id, $product_id, $product_amount)
+    {
+        return ($this->order->create($user_id, $product_id, $product_amount));
     }
 
     public function deleteById(int $id): bool
