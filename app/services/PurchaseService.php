@@ -28,6 +28,15 @@ class PurchaseService
             return false;
     }
 
+    public function getIdByUserId($user_id)
+    {
+        $sql = 'SELECT id FROM `purchases` WHERE user_id = :user_id';
+        $stm = $this->connect()->prepare($sql);
+        $stm->execute(['user_id' => $user_id]);
+        $id = $stm->fetchAll();
+        return intval($id[0][0]);
+    }
+
     public function getLastIdByUserId($user_id)
     {
         $sql = 'SELECT MAX(id) FROM `purchases` WHERE user_id = :user_id';

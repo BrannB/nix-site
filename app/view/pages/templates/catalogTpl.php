@@ -1,37 +1,30 @@
 <?php
-    if ($products['session']->keyExists('cart_list') && count($products['session']->get('cart_list')) > 0)
-        {
-            $countProducts = count($products['session']->get('cart_list'));
-        }
     foreach ($products['products'] as $item):
 ?>
-    <div class="card">
+    <div class="card bg-dark" style="border-color: snow">
         <img src= "<?php echo $item->image?>" alt="...">
         <div class="card-body">
-            <h2 class="card-title"><?php echo $item->name?></h2>
-            <p class="card-text"><?php echo $item->description?></p>
-            <p class="card-text"><small class="text-muted">
+            <h2 class="card-title text-center" style="color: snow; background-color: #0c5460">
+                <?php echo $item->name?>
+            </h2>
+            <h4><p class="card-text text-center"><?php echo $item->description?></p></h4>
+            <h3><p class="card-text text-center"><small class="text-muted">
             <?php
               if ($item->status == 1)
                  {
-                    echo "В наличии $item->quantity ключей.";
+                    echo "В наличии.";
                  } else {
                     echo "Нет в наличии.";
                  }
             ?>
-            </small></p>
-            <div class="text text-right">
-                <h3><b><?php echo $item->price . "$";
-                ?></b></h3>
-                <button href="#" class="btn btn-primary"> View </button>
-                <button href="#" class="btn btn-success"> Buy </button>
-
-                <form action="catalog/addProduct" method="post" class="row" style="width: 100%">
-                    <button class="btn btn-primary" name="addToBucketBtn" value="<?php echo $item->id ?>">
+                    </small></p></h3>
+            <div class="text text-right" >
+                <h3><b><?php echo $item->price . "$"; ?></b></h3>
+                <form action="catalog/addProduct" method="post" style="width: 100%">
+                    <button <?php  if ($item->status == 0) echo "disabled"?> class="btn btn-lg btn-outline-info" name="addToBucketBtn" value="<?php echo $item->id ?>">
                         В корзину
                     </button>
                 </form>
-                <?php echo $item->id ?>
             </div>
         </div>
     </div>

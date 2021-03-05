@@ -15,40 +15,35 @@
     </h1>
     <br>
     <?php else: ?>
+     <div class="container mt-4">
+         <table class="table table-dark table-striped text-center table-hover" >
+         <thead>
+         <tr>
+             <th scope="col">Purchase id</th>
+             <th scope="col">Created at</th>
+             <th scope="col">Total Price</th>
+             <th scope="col">Status</th>
+         </tr>
+         </thead>
+         <tbody>
  <?php foreach($products['purchases'] as $purchase): ?>
-    <div class="container mt-4">
-        <div class="card">
-            <div class="card-body text-center" style=" color: #0c5460; background-image: url(https://convertingcolors.com/gradient-0C5460.svg)">
-                <h2 class="card-title" style="background-color: snow;">
-                    <b><?php echo "Purchase #" . $purchase->id ?></b>
-                </h2>
-                <div class="text-center" style="color:
-                <?php
-                if ($purchase->status == 'completed')
-                    echo "green";
-                elseif ($purchase->status == 'canceled')
-                    echo "red";
-                elseif ($purchase->status == 'pending')
-                    echo "darkorange";
-                ?>;
-                background-color: snow;  font-size: 22px;">
-                    <b><?php echo "Status: "?></b><?php echo $purchase->status ?>
-                </div>
-                <div class="text-center" style="font-size: 15px; background-color: snow;">
-                    <?php echo "(Date of creating: $purchase->created_at)" ?>
-                </div>
-                <div class="text-right">
-                    <h2 class="card-title">
-                        <br>
-                        <mark style="background-color: snow; color: darkorange; font-size: 22px;">
-                            <b>
-                                $<?php echo $purchase->total_price; ?>
-                            </b>
-                        </mark>
-                    </h2>
-                </div>
-            </div>
-        </div>
-    </div>
-  <?php endforeach; ?>
-    <?php endif; ?>
+            <tr>
+                <th scope="row"><?php echo $purchase->id ?></th>
+                <td><?php echo $purchase->created_at ?></td>
+                <td>$<?php echo $purchase->total_price ?></td>
+                <td><?php echo $purchase->status ?></td>
+                <td>
+                    <form action="purchaseDetails" method="post">
+                        <button class="btn btn-outline-info" name="details-btn"
+                                value="<?php echo $purchase->id ?>" type="submit"
+                                style="color: snow">
+                            Details
+                        </button>
+                    </form>
+                </td>
+            </tr>
+ <?php endforeach; ?>
+         </tbody>
+         </table>
+     </div>
+<?php endif; ?>

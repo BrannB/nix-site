@@ -28,7 +28,7 @@ class Purchase
 
     public function getAllPurchasesByUserId($id)
     {
-        return $this->defaultModel->get('`purchases`','*', "user_id = $id");
+        return $this->defaultModel->get('`purchases`','*', "user_id = $id", "id DESC");
     }
 
     public function purchaseMapper($id)
@@ -45,6 +45,11 @@ class Purchase
             array_push($purchaseData, $object);
         }
         return $purchaseData;
+    }
+
+    public function getIdByUserId($user_id)
+    {
+        return $this->purchaseService->getIdByUserId($user_id);
     }
 
 }

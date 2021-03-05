@@ -66,4 +66,16 @@ Router::addRoute('^viewMyOrders$', [
     'controller' => 'viewMyOrders',
     "action" => "index"
 ]);
+Router::addRoute('^member/ProductList/api$', [
+    'controller' => 'member',
+    "action" => "ProductListApi"
+]);
+Router::addRoute('^member/ProductList$', [
+    'controller' => 'member',
+    "action" => "ProductList"
+]);
+Router::addRoute('^purchaseDetails$', [
+    'controller' => 'viewMyOrders',
+    "action" => "purchaseDetails"
+]);
 

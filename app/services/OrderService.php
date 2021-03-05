@@ -19,8 +19,9 @@ class OrderService
         return DB::getInstance()->connect();
     }
 
-    public function create($purchase_id, $product_id, $product_amount) : bool
+    public function create($user_id, $product_id, $product_amount) : bool
     {
+        $purchase_id = $this->purchase->getLastIdByUserId($user_id);
         $sql = 'INSERT INTO `order` (purchase_id, product_id, product_amount) 
                 VALUE (:purchase_id, :product_id, :product_amount)';
         $stm = $this->connect()->prepare($sql);
@@ -33,5 +34,14 @@ class OrderService
             return true;
         else
             return false;
+    }
+
+    public function getAllUserOrdersById($id)
+    {
+        $sql = "SELECT * FROM `order` WHERE purchase_id = :id";
+        $stm = $this->connect()->prepare($sql);
+        $stm->execute(['id' => $id]);
+        $result = $stm->fetchAll();
+        return $result;
     }
 }

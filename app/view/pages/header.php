@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" style="height: 100%;">
 
-<head>
+<script>
     <meta charset="UTF-8">
     <title> Title </title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -9,7 +9,7 @@
     <link rel = "stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link href="../../../framework/tools/bootstrap-4.5.0/dist/css/bootstrap.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
-
+    <script src="js/app.js" defer> </script>
     <style>
         .bd-placeholder-img {
             font-size: 1.125rem;
@@ -59,6 +59,13 @@
                     </button>
                 </a>
             <?php else: ?>
+                <?php if($_SESSION['is_admin'] = 1): ?>
+                    <a class="nav-link" href="admin">
+                        <button rel="admin" class="btn btn-lg btn-outline-danger">
+                            Admin page
+                        </button>
+                    </a>
+                <?php endif; ?>
                 <a class="nav-link" href="bucket">
                     <button rel="signin" class="btn btn-lg btn-outline-info">
                         Bucket
