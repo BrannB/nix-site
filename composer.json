@@ -21,7 +21,8 @@
             "app/services/OrderService.php",
             "framework/DataBase/DB.php",
             "app/models/Purchase.php",
-            "app/services/PurchaseService.php"
+            "app/services/PurchaseService.php",
+            "app/models/Admin.php"
         ],
         "psr-4": {
             "app\\tools\\": "framework/tools/",

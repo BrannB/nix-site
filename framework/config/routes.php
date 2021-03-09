@@ -1,49 +1,63 @@
 <?php
-
+//----------------Main------------------------
 Router::addRoute('^$', [
     'controller' => 'main',
     "action" => "index"
 ]);
+Router::addRoute('^main$', [
+    'controller' => 'main',
+    "action" => "index"
+]);
 
+//----------------Catalog---------------------
 Router::addRoute('^catalog$', [
     'controller' => 'catalog',
     "action" => "index"
 ]);
-Router::addRoute('^signin$', [
-    'controller' => 'signIn'
-    , "action" => "index"
-]);
-
-Router::addRoute('^register$', [
-    'controller' => 'register',
-    "action" => "index"
-]);
-
-Router::addRoute('^member$', [
-    'controller' => 'member',
-    "action" => "index"
-]);
-
-Router::addRoute('^register/reg$', [
-    'controller' => 'register',
-    "action" => "register"
-]);
-
-Router::addRoute('^signin/auth$', [
-    'controller' => 'signIn',
-    "action" => "authentication"
-]);
-
-Router::addRoute('^bucket$', [
-    'controller' => 'bucket',
-    "action" => "index"
-]);
-
 Router::addRoute('^catalog/addProduct$', [
     'controller' => 'catalog',
     "action" => "addProduct"
 ]);
 
+//----------------SignIn----------------------
+Router::addRoute('^signin$', [
+    'controller' => 'signIn',
+    "action" => "index"
+]);
+Router::addRoute('^signin/auth$', [
+    'controller' => 'signIn',
+    "action" => "authentication"
+]);
+
+//----------------Register--------------------
+Router::addRoute('^register$', [
+    'controller' => 'register',
+    "action" => "index"
+]);
+Router::addRoute('^register/reg$', [
+    'controller' => 'register',
+    "action" => "register"
+]);
+
+//----------------Member----------------------
+Router::addRoute('^member$', [
+    'controller' => 'member',
+    "action" => "index"
+]);
+Router::addRoute('^member/ProductList/api$', [
+    'controller' => 'member',
+    "action" => "ProductListApi"
+]);
+Router::addRoute('^member/ProductList$', [
+    'controller' => 'member',
+    "action" => "ProductList"
+]);
+
+//----------------Bucket---------------------
+Router::addRoute('^bucket$', [
+    'controller' => 'bucket',
+    "action" => "index"
+]);
 Router::addRoute('^bucket/setAmount$', [
     'controller' => 'bucket',
     "action" => "setAmount"
@@ -58,24 +72,82 @@ Router::addRoute('^bucket/makeOrder$', [
     "action" => "makeOrder"
 ]);
 
-Router::addRoute('^main$', [
-    'controller' => 'main',
-    "action" => "index"
-]);
+//----------------Orders----------------------
 Router::addRoute('^viewMyOrders$', [
     'controller' => 'viewMyOrders',
     "action" => "index"
-]);
-Router::addRoute('^member/ProductList/api$', [
-    'controller' => 'member',
-    "action" => "ProductListApi"
-]);
-Router::addRoute('^member/ProductList$', [
-    'controller' => 'member',
-    "action" => "ProductList"
 ]);
 Router::addRoute('^purchaseDetails$', [
     'controller' => 'viewMyOrders',
     "action" => "purchaseDetails"
 ]);
+
+//----------------Admin-----------------------
+Router::addRoute('^adminUsers$', [
+    'controller' => 'adminUsers',
+    "action" => "index"
+]);
+Router::addRoute('^adminOrders$', [
+    'controller' => 'adminOrders',
+    "action" => "index"
+]);
+Router::addRoute('^adminProducts$', [
+    'controller' => 'adminProducts',
+    "action" => "index"
+]);
+Router::addRoute('^adminPurchases$', [
+    'controller' => 'adminPurchases',
+    "action" => "index"
+]);
+Router::addRoute('^adminCrudProduct$', [
+    'controller' => 'adminProducts',
+    "action" => "adminCrudProductIndex"
+]);
+Router::addRoute('^adminCreateProduct$', [
+    'controller' => 'adminProducts',
+    "action" => "adminCreateProductIndex"
+]);
+Router::addRoute('^adminCreateProduct/create$', [
+    'controller' => 'adminProducts',
+    "action" => "adminCreateProduct"
+]);
+Router::addRoute('^adminDeleteProduct$', [
+    'controller' => 'adminProducts',
+    "action" => "adminDeleteProduct"
+]);
+Router::addRoute('^adminCreateProduct/create$', [
+    'controller' => 'adminProducts',
+    "action" => "adminCreateProduct"
+]);
+Router::addRoute('^adminUpdateProduct$', [
+    'controller' => 'adminProducts',
+    "action" => "adminUpdateProductIndex"
+]);
+Router::addRoute('^adminUpdateProduct/update$', [
+    'controller' => 'adminProducts',
+    "action" => "adminUpdateProduct"
+]);
+Router::addRoute('^adminCrudUser$', [
+    'controller' => 'adminUsers',
+    "action" => "adminCrudUserIndex"
+]);
+Router::addRoute('^adminDeleteUser$', [
+    'controller' => 'adminUsers',
+    "action" => "adminDeleteUser"
+]);
+Router::addRoute('^adminUpdateUser$', [
+    'controller' => 'adminUsers',
+    "action" => "adminUpdateUserIndex"
+]);
+Router::addRoute('^adminUpdateUser/update$', [
+    'controller' => 'adminUsers',
+    "action" => "adminUpdateUser"
+]);
+Router::addRoute('^adminGetUserPurchases$', [
+    'controller' => 'adminUsers',
+    "action" => "adminGetUserPurchases"
+]);
+
+
+
 

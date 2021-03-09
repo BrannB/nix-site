@@ -1,6 +1,4 @@
 <!DOCTYPE html>
-<html lang="en" style="height: 100%;">
-
 <script>
     <meta charset="UTF-8">
     <title> Title </title>
@@ -47,7 +45,7 @@
                     <a class="nav-link" href="#"> About us </a>
                 </li>
             </ul>
-            <?php if (!isset($_SESSION['name'])): ?>
+            <?php if (!isset($_SESSION['uname'])): ?>
                 <a class="nav-link" href="signin">
                     <button rel="signin" class="btn btn-lg btn-outline-success">
                         Sign In
@@ -59,9 +57,9 @@
                     </button>
                 </a>
             <?php else: ?>
-                <?php if($_SESSION['is_admin'] = 1): ?>
-                    <a class="nav-link" href="admin">
-                        <button rel="admin" class="btn btn-lg btn-outline-danger">
+                <?php if($_SESSION['is_admin'] == 1): ?>
+                    <a class="nav-link" href="adminUsers">
+                        <button rel="adminUsers" class="btn btn-lg btn-outline-danger">
                             Admin page
                         </button>
                     </a>
@@ -73,7 +71,7 @@
                 </a>
                     <a class="nav-item" href="member">
                         <button rel="member" class="btn btn-lg btn-outline-warning">
-                            Hi, <?php echo $_SESSION['name']?>
+                            Hi, <?php echo $_SESSION['uname']?>
                         </button>
                     </a>
             <?php endif; ?>
