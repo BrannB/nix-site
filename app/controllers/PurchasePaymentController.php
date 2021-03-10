@@ -39,11 +39,13 @@ class PurchasePaymentController
         }
         $this->purchase->switchStatusToCompleted($purchase_id);
         $keys = $this->gameKey->getAllKeysByPurchaseId($purchase_id);
-        var_dump($keys);
-        foreach ($keys[0] as $key => $key1) {
-            $body .= $keys[0][$key]->key_body . "\n";
+
+        foreach ($keys as $key => $key1) {
+            foreach ($keys[$key] as $key2 => $value) {
+                $body .= $keys[$key][$key2]->key_body . "\n";
+            }
         }
-        var_dump($body);
+
         $this->mailer->sendMail("$purchase_id", "$body");
         header("Location: viewMyOrders");
     }
