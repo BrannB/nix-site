@@ -1,6 +1,7 @@
 <?php
 
 namespace app\services;
+use app\models\DefaultModel;
 use app\models\Purchase;
 use PDO;
 use framework\DataBase\DB;
@@ -45,4 +46,5 @@ class PurchaseService
         $id = $stm->fetchAll();
         return intval($id[0][0]);
     }
+
 }

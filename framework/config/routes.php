@@ -81,6 +81,12 @@ Router::addRoute('^purchaseDetails$', [
     'controller' => 'viewMyOrders',
     "action" => "purchaseDetails"
 ]);
+Router::addRoute('^purchasePayment$', [
+    'controller' => 'PurchasePayment',
+    "action" => "pay"
+]);
+
+
 
 //----------------Admin-----------------------
 Router::addRoute('^adminUsers$', [

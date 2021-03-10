@@ -7,15 +7,21 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'Composer\\InstalledVersions' => $vendorDir . '/composer/InstalledVersions.php',
+    'Normalizer' => $vendorDir . '/symfony/polyfill-intl-normalizer/Resources/stubs/Normalizer.php',
     'Router' => $baseDir . '/framework/router/Router.php',
-    'app\\DB' => $baseDir . '/framework/DataBase/DB.php',
+    'app\\models\\Admin' => $baseDir . '/app/models/Admin.php',
     'app\\models\\DefaultModel' => $baseDir . '/app/models/DefaultModel.php',
+    'app\\models\\Key' => $baseDir . '/app/models/Key.php',
     'app\\models\\Order' => $baseDir . '/app/models/Order.php',
     'app\\models\\Product' => $baseDir . '/app/models/Product.php',
+    'app\\models\\Purchase' => $baseDir . '/app/models/Purchase.php',
     'app\\models\\User' => $baseDir . '/app/models/User.php',
     'app\\services\\OrderService' => $baseDir . '/app/services/OrderService.php',
+    'app\\services\\PurchaseService' => $baseDir . '/app/services/PurchaseService.php',
     'app\\services\\UserService' => $baseDir . '/app/services/UserService.php',
     'cr\\hashcli\\HashManager' => $vendorDir . '/cr/hashcli/src/HashManager.php',
     'framework\\Authentication\\Authentication' => $baseDir . '/framework/Authentication/Authentication.php',
+    'framework\\DataBase\\DB' => $baseDir . '/framework/DataBase/DB.php',
+    'framework\\Mailer\\Mailer' => $baseDir . '/framework/mailer/Mailer.php',
     'framework\\sessions\\Session' => $baseDir . '/framework/sessions/Session.php',
 );

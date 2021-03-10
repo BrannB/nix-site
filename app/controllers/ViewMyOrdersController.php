@@ -2,7 +2,7 @@
 
 
 namespace app\controllers;
-use app\models\Product;
+use app\models\Order;
 use app\models\Purchase;
 use app\tools\Templeater;
 use framework\sessions\Session;
@@ -29,5 +29,16 @@ class ViewMyOrdersController
         $purchases = $purchaseObject->purchaseMapper($this->session->get('id'));
         $obj->renderContent($template, $layout,
             ['purchases' => $purchases, 'session' => $this->session]);
+    }
+
+    public function purchaseDetails()
+    {
+        $template = 'purchaseDetailsTpl';
+        $layout = 'purchaseDetails';
+        $orderObject = new Order();
+        $obj = new Templeater();
+        $order = $orderObject->orderMapper(intval($_POST['details-btn']));
+        $obj->renderContent($template, $layout,
+            ['order' => $order, 'session' => $this->session]);
     }
 }

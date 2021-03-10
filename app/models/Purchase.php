@@ -52,4 +52,23 @@ class Purchase
         return $this->purchaseService->getIdByUserId($user_id);
     }
 
+    public function switchStatusToCanceled($id)
+    {
+        return $this->defaultModel->update(
+            'purchases',
+            ['status' => 'canceled'],
+            ["id = $id"],
+            ""
+        );
+    }
+
+    public function switchStatusToCompleted($id)
+    {
+        return $this->defaultModel->update(
+            'purchases',
+            ['status' => 'completed'],
+            ["id = $id"],
+            ""
+        );
+    }
 }
