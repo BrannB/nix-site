@@ -2,6 +2,7 @@
 
 namespace app\controllers;
 
+use app\models\Key;
 use app\models\Purchase;
 use framework\DataBase\DB;
 use PDO;
@@ -18,6 +19,7 @@ class BucketController
     private $products;
     private Order $order;
     private Purchase $purchase;
+    private Key $gameKey;
 
     public function __construct()
     {
@@ -29,6 +31,7 @@ class BucketController
         $this->templeater = new Templeater();
         $this->order = new Order();
         $this->purchase = new Purchase();
+        $this->gameKey = new Key();
     }
 
     public function connect(): PDO
@@ -95,12 +98,9 @@ class BucketController
                         }
                     }
                 }
+
                 $this->authSession->session->set("cart_list", []);
-                echo "<h1 class='text-center'>
-                    Order has been successfully added to your profile!<br> 
-                    You will be redirected to your profile in 5 sec.
-                    </h1>";
-                header("refresh: 5; url=../member");
+                header("Location: ../viewMyOrders");
             }
         }
     }

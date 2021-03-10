@@ -8,21 +8,23 @@
     ],
     "autoload": {
         "classmap": [
+            "app/models/Key.php",
             "app/models/User.php",
             "app/models/DefaultModel.php",
+            "app/models/Order.php",
+            "app/models/Purchase.php",
+            "app/models/Admin.php",
+            "app/models/Product.php",
+            "app/services/PurchaseService.php",
             "app/services/UserService.php",
+            "app/services/OrderService.php",
             "framework/router/Router.php",
             "framework/config/config.php",
             "framework/DataBase/DB.php",
             "framework/Authentication/Authentication.php",
             "framework/sessions/Session.php",
-            "app/models/Product.php",
-            "app/models/Order.php",
-            "app/services/OrderService.php",
             "framework/DataBase/DB.php",
-            "app/models/Purchase.php",
-            "app/services/PurchaseService.php",
-            "app/models/Admin.php"
+            "framework/mailer/Mailer.php"
         ],
         "psr-4": {
             "app\\tools\\": "framework/tools/",
@@ -37,6 +39,7 @@
         "monolog/monolog": "^2.2",
         "niksteklo34/logger": "@dev",
         "cr/hashcli": "dev-master",
-        "brann/logger": "dev-master"
+        "brann/logger": "dev-master",
+        "swiftmailer/swiftmailer": "^6.0"
     }
 }

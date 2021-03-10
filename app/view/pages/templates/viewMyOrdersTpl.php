@@ -33,6 +33,19 @@
                 <td>$<?php echo $purchase->total_price ?></td>
                 <td><?php echo $purchase->status ?></td>
                 <td>
+                <?php if ($purchase->status != "completed"): ?>
+                        <form action="purchasePayment" method="post">
+                            <button class="btn btn-outline-success" name="pay-btn"
+                                    value="<?php echo $purchase->id ?>" type="submit"
+                                    style="color: snow">
+                                Emulate Payment
+                            </button>
+                        </form>
+                <?php else: ?>
+                    <b>Keys have been sent to your email-box</b>
+                <?php endif; ?>
+                </td>
+                <td>
                     <form action="purchaseDetails" method="post">
                         <button class="btn btn-outline-info" name="details-btn"
                                 value="<?php echo $purchase->id ?>" type="submit"

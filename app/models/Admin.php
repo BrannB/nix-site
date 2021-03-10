@@ -27,6 +27,6 @@ class Admin
     }
     public function getAllPurchases()
     {
-        return $this->defaultModel->get('`purchases`');
+        return $this->defaultModel->get('`purchases`', "*", "", "id DESC");
     }
 }

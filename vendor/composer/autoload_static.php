@@ -6,6 +6,15 @@ namespace Composer\Autoload;
 
 class ComposerStaticInit52ee5796dfa1d310fab2c50a2c4d3b22
 {
+    public static $files = array (
+        'e69f7f6ee287b969198c3c9d6777bd38' => __DIR__ . '/..' . '/symfony/polyfill-intl-normalizer/bootstrap.php',
+        '25072dd6e2470089de65ae7bf11d3109' => __DIR__ . '/..' . '/symfony/polyfill-php72/bootstrap.php',
+        'f598d06aa772fa33d905e87be6398fb1' => __DIR__ . '/..' . '/symfony/polyfill-intl-idn/bootstrap.php',
+        'def43f6c87e4f8dfd0c9e1b1bab14fe8' => __DIR__ . '/..' . '/symfony/polyfill-iconv/bootstrap.php',
+        '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
+        '2c102faa651ef8ea5874edb585946bce' => __DIR__ . '/..' . '/swiftmailer/swiftmailer/lib/swift_required.php',
+    );
+
     public static $prefixLengthsPsr4 = array (
         'm' => 
         array (
@@ -21,6 +30,14 @@ class ComposerStaticInit52ee5796dfa1d310fab2c50a2c4d3b22
             'app\\tools\\' => 10,
             'app\\controllers\\' => 16,
         ),
+        'S' => 
+        array (
+            'Symfony\\Polyfill\\Php72\\' => 23,
+            'Symfony\\Polyfill\\Mbstring\\' => 26,
+            'Symfony\\Polyfill\\Intl\\Normalizer\\' => 33,
+            'Symfony\\Polyfill\\Intl\\Idn\\' => 26,
+            'Symfony\\Polyfill\\Iconv\\' => 23,
+        ),
         'P' => 
         array (
             'Psr\\Log\\' => 8,
@@ -32,6 +49,14 @@ class ComposerStaticInit52ee5796dfa1d310fab2c50a2c4d3b22
         'M' => 
         array (
             'Monolog\\' => 8,
+        ),
+        'E' => 
+        array (
+            'Egulias\\EmailValidator\\' => 23,
+        ),
+        'D' => 
+        array (
+            'Doctrine\\Common\\Lexer\\' => 22,
         ),
         'A' => 
         array (
@@ -60,6 +85,26 @@ class ComposerStaticInit52ee5796dfa1d310fab2c50a2c4d3b22
         array (
             0 => __DIR__ . '/../..' . '/app/controllers',
         ),
+        'Symfony\\Polyfill\\Php72\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/polyfill-php72',
+        ),
+        'Symfony\\Polyfill\\Mbstring\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/polyfill-mbstring',
+        ),
+        'Symfony\\Polyfill\\Intl\\Normalizer\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/polyfill-intl-normalizer',
+        ),
+        'Symfony\\Polyfill\\Intl\\Idn\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/polyfill-intl-idn',
+        ),
+        'Symfony\\Polyfill\\Iconv\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/polyfill-iconv',
+        ),
         'Psr\\Log\\' => 
         array (
             0 => __DIR__ . '/..' . '/psr/log/Psr/Log',
@@ -72,6 +117,14 @@ class ComposerStaticInit52ee5796dfa1d310fab2c50a2c4d3b22
         array (
             0 => __DIR__ . '/..' . '/monolog/monolog/src/Monolog',
         ),
+        'Egulias\\EmailValidator\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/egulias/email-validator/src',
+        ),
+        'Doctrine\\Common\\Lexer\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/doctrine/lexer/lib/Doctrine/Common/Lexer',
+        ),
         'Authentication\\' => 
         array (
             0 => __DIR__ . '/../..' . '/framework/Authentication',
@@ -80,16 +133,22 @@ class ComposerStaticInit52ee5796dfa1d310fab2c50a2c4d3b22
 
     public static $classMap = array (
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
+        'Normalizer' => __DIR__ . '/..' . '/symfony/polyfill-intl-normalizer/Resources/stubs/Normalizer.php',
         'Router' => __DIR__ . '/../..' . '/framework/router/Router.php',
-        'app\\DB' => __DIR__ . '/../..' . '/framework/DataBase/DB.php',
+        'app\\models\\Admin' => __DIR__ . '/../..' . '/app/models/Admin.php',
         'app\\models\\DefaultModel' => __DIR__ . '/../..' . '/app/models/DefaultModel.php',
+        'app\\models\\Key' => __DIR__ . '/../..' . '/app/models/Key.php',
         'app\\models\\Order' => __DIR__ . '/../..' . '/app/models/Order.php',
         'app\\models\\Product' => __DIR__ . '/../..' . '/app/models/Product.php',
+        'app\\models\\Purchase' => __DIR__ . '/../..' . '/app/models/Purchase.php',
         'app\\models\\User' => __DIR__ . '/../..' . '/app/models/User.php',
         'app\\services\\OrderService' => __DIR__ . '/../..' . '/app/services/OrderService.php',
+        'app\\services\\PurchaseService' => __DIR__ . '/../..' . '/app/services/PurchaseService.php',
         'app\\services\\UserService' => __DIR__ . '/../..' . '/app/services/UserService.php',
         'cr\\hashcli\\HashManager' => __DIR__ . '/..' . '/cr/hashcli/src/HashManager.php',
         'framework\\Authentication\\Authentication' => __DIR__ . '/../..' . '/framework/Authentication/Authentication.php',
+        'framework\\DataBase\\DB' => __DIR__ . '/../..' . '/framework/DataBase/DB.php',
+        'framework\\Mailer\\Mailer' => __DIR__ . '/../..' . '/framework/mailer/Mailer.php',
         'framework\\sessions\\Session' => __DIR__ . '/../..' . '/framework/sessions/Session.php',
     );
 
