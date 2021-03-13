@@ -34,7 +34,7 @@
         <div class="col-md-3 mb-3">
             <label for="country">Country</label>
             <?php
-            use framework\models\DefaultModel;
+            use app\models\DefaultModel;
             $result = new DefaultModel();
             $result = $result->get("country");
             ?>

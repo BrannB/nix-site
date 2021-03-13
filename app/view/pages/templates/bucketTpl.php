@@ -87,8 +87,8 @@
     </div>
     <div class="container mt-4 text-right">
         <form action="bucket/makeOrder" class="text-right" method="post">
-            <button name="makeOrder" type="submit" class="btn-lg btn-warning"><b>Buy!</b></button>
+            <button name="makeOrder" type="submit" value="<?php echo $finalPrice?>" class="btn-lg btn-warning"><b>Buy!</b></button>
         </form>
     </div>
 <br><br>
-<?php endif; ?>
+<?php endif;

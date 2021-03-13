@@ -7,6 +7,7 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'Composer\\InstalledVersions' => $vendorDir . '/composer/InstalledVersions.php',
+    'Framework\\pagination\\Pagination' => $baseDir . '/framework/pagination/Pagination.php',
     'Normalizer' => $vendorDir . '/symfony/polyfill-intl-normalizer/Resources/stubs/Normalizer.php',
     'Router' => $baseDir . '/framework/router/Router.php',
     'app\\models\\Admin' => $baseDir . '/app/models/Admin.php',

@@ -1,0 +1,20 @@
+{
+  "name": "niksteklo34/logger",
+  "description": "Custom logger",
+  "type": "library",
+  "minimum-stability": "dev",
+  "authors": [
+    {
+      "name": "nik12",
+      "email": "email@example.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Niksteklo34\\Logger\\": "src/"
+    }
+  },
+  "require": {
+    
+  }
+}

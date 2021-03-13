@@ -133,6 +133,7 @@ class ComposerStaticInit52ee5796dfa1d310fab2c50a2c4d3b22
 
     public static $classMap = array (
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
+        'Framework\\pagination\\Pagination' => __DIR__ . '/../..' . '/framework/pagination/Pagination.php',
         'Normalizer' => __DIR__ . '/..' . '/symfony/polyfill-intl-normalizer/Resources/stubs/Normalizer.php',
         'Router' => __DIR__ . '/../..' . '/framework/router/Router.php',
         'app\\models\\Admin' => __DIR__ . '/../..' . '/app/models/Admin.php',

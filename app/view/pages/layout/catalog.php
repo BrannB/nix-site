@@ -63,6 +63,7 @@
                 <ui>
                     <?php echo $template ?>
                 </ui>
+
     </div>
 </main>
 

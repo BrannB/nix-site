@@ -16,7 +16,8 @@ if (empty($products['order'])): ?>
     </h1>
     <br>
 
-<?php else: ?>
+<?php else:
+    ?>
     <table class="table table-dark table-striped text-center table-hover" >
         <thead>
         <tr>
@@ -26,7 +27,8 @@ if (empty($products['order'])): ?>
         </tr>
         </thead>
         <tbody>
-        <?php foreach($products['order'] as $order): ?>
+        <?php
+        foreach($products['order'] as $order): ?>
             <tr>
                 <th scope="row"><?php echo $order->product_name[0]->name; ?></th>
                 <td><?php echo $order->product_amount ?></td>
@@ -37,7 +39,7 @@ if (empty($products['order'])): ?>
         </tbody>
     </table>
 
-<?php endif; ?>
+<?php endif;?>
     <form action="viewMyOrders" method="post" class="text-right" style="color: snow">
         <button class="btn btn-dark" type="submit">
             Go back

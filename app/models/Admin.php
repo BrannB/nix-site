@@ -19,7 +19,7 @@ class Admin
 
     public function getAllOrders()
     {
-        return $this->defaultModel->get('`order`');
+        return $this->defaultModel->get('`order`', "*", "", "id DESC");
     }
     public function getAllProducts()
     {

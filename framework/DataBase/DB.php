@@ -18,7 +18,7 @@ class DB
         $this->dbConfig = $dbConfig;
     }
 
-    public static function getInstance() : DB
+    public static function getInstance()
     {
         if (self::$instance === null) {
             self::$instance = new self();
