@@ -30,17 +30,20 @@
         "psr-4": {
             "app\\tools\\": "framework/tools/",
             "app\\tools\\Exceptions\\": "framework/tools/Exceptions/",
-            "Authentication\\" : "framework/Authentication/",
+            "Authentication\\": "framework/Authentication/",
             "app\\controllers\\": "app/controllers/",
             "models\\": "app/models/"
         },
-        "require": {}
+        "require": []
     },
     "require": {
         "monolog/monolog": "^2.2",
         "niksteklo34/logger": "@dev",
         "cr/hashcli": "dev-master",
         "brann/logger": "dev-master",
-        "swiftmailer/swiftmailer": "^6.0"
+        "swiftmailer/swiftmailer": "^6.0",
+        "codeception/module-phpbrowser": "^1.0.0",
+        "codeception/module-asserts": "^1.0.0",
+        "codeception/codeception": "*"
     }
 }

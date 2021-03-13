@@ -10,7 +10,7 @@
         let messageTpl = ''
         products.forEach(i => {
             messageTpl += `
-                <div class="card bg-dark" style="border-color: snow">
+                <div class="card bg-dark" style="border-color: snow; ">
                     <img src= "${i.image}" alt="...">
                     <div class="card-body">
                         <h2 class="card-title text-center" style="color: snow; background-color: #0c5460">
