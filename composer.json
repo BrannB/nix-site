@@ -24,7 +24,8 @@
             "framework/Authentication/Authentication.php",
             "framework/sessions/Session.php",
             "framework/DataBase/DB.php",
-            "framework/mailer/Mailer.php"
+            "framework/mailer/Mailer.php",
+            "framework/pagination/Pagination.php"
         ],
         "psr-4": {
             "app\\tools\\": "framework/tools/",

@@ -2,11 +2,12 @@
 
 namespace app\models;
 
-use app\DB;
+use framework\DataBase\DB;
+use PDO;
 
 class Product extends DefaultModel
 {
-    private $db_connect;
+    public $db_connect;
     public $id, $name, $description, $status, $price, $image, $quantity;
     public DefaultModel $DefaultModel;
 
@@ -18,7 +19,7 @@ class Product extends DefaultModel
 
     public function getProductsDb()
     {
-        return $this->DefaultModel->get('product','*');
+        return $this->DefaultModel->get('product', '*');
     }
 
     public function productMapper()
@@ -34,10 +35,19 @@ class Product extends DefaultModel
             $object->status = $product->status;
             $object->price = $product->price;
             $object->image = $product->image;
-            $object->quantity = $product->quantity;
 
             array_push($productData, $object);
         }
         return $productData;
+    }
+
+    public function getPagination($start, $perpage)
+    {
+        $sql = "SELECT *  
+                FROM product
+                LIMIT {$start}, {$perpage}";
+        $statement = $this->DefaultModel->db_connect->query($sql);
+        $statement->setFetchMode(PDO::FETCH_OBJ);
+        return $statement->fetchAll();
     }
 }

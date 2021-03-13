@@ -2,12 +2,12 @@
 
 namespace app\models;
 
-use app\DB;
+use framework\DataBase\DB;
 use PDO;
 
 class DefaultModel
 {
-    private $db_connect;
+    public $db_connect;
 
     public function __construct()
     {
@@ -75,7 +75,6 @@ class DefaultModel
         {
             if($i%2 != 0)
             {
-                var_dump($where);
                 if(is_string($where[$i]))
                 {
                     if(($i+1) != null)
@@ -104,6 +103,7 @@ class DefaultModel
             }
         }
         $query .= ' WHERE ' . $where;
+
         $prepareQuery = $connect->prepare($query);
         $prepareQuery->execute();
         if ($prepareQuery) {

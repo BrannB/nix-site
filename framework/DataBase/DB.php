@@ -1,11 +1,11 @@
 <?php
 
-namespace app;
+namespace framework\DataBase;
 use PDO;
 
 class DB
 {
-    private static $instance;
+    public static $instance;
     private $host;
     private $user;
     private $password;
