@@ -1,30 +1,49 @@
 <?php
 
 namespace app\controllers;
+
+use Framework\pagination\Pagination;
 use framework\sessions\Session;
 use app\tools\Templeater;
 use app\models\DefaultModel;
 use app\models\Product;
+use PDO;
 
 class CatalogController
 {
     public DefaultModel $DefaultModel;
     private session $session;
+    private Pagination $pagination;
+    public Product $product;
 
     public function __construct()
     {
         $this->DefaultModel = new DefaultModel();
         $this->session = Session::getInstance();
+        if(!isset($_GET['page']))
+            $_GET['page'] = 1;
+        $this->pagination = new Pagination($_GET['page'], 3, count($this->getAll()));
+        $this->product = new Product();
+    }
+
+    public function getAll()
+    {
+        $sql = "SELECT *  
+                FROM product";
+        $statement = $this->DefaultModel->db_connect->query($sql);
+        $statement->setFetchMode(PDO::FETCH_OBJ);
+        return $statement->fetchAll();
     }
 
     public function Index() {
+        $pag = $this->pagination;
         $template = 'catalogTpl';
         $layout = 'catalog';
-        $productObject = new Product();
-        $products = $productObject->productMapper();
+        $products = $this->product->getPagination($this->pagination->getPageNumber(), 3);
         $obj = new Templeater();
         $obj->renderContent($template, $layout,
-            ['products' => $products, 'session' => $this->session]);
+            ['products' => $products, 'session' => $this->session, 'pagination' => $pag]);
+
     }
 
     public function addProduct()
@@ -56,4 +75,6 @@ class CatalogController
         }
         return 1;
     }
+
+
 }

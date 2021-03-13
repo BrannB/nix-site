@@ -1,8 +1,6 @@
 <?php
 
-
-
-use Niksteklo34\Logger\Logger;
+use brannLogger\Logger;
 
 class Router
 {
@@ -19,7 +17,7 @@ class Router
         return trim($_SERVER['REQUEST_URI'], '/');
     }
 
-    public static function routeCheck(string $url)
+    public static function routeCheck($url)
     {
         foreach (self::$routes as $pattern => $route)
         {
@@ -45,7 +43,7 @@ class Router
 
     public function matchRoute()
     {
-        if (self::routeCheck(self::getUrl()))
+        if (self::routeCheck(self::removeQueryString(self::getUrl())))
         {
             $controller = ucfirst(self::$route['controller']) . "Controller";
             $act = ucfirst(self::$route['action']);
@@ -54,6 +52,17 @@ class Router
             {
                 $object = new $str(self::$route);
                 $object->$act();
+            }
+        }
+    }
+
+    public static function removeQueryString($uri) {
+        if ($uri) {
+            $parts = explode('?', $uri);
+            if (strpos($parts['0'], "=") === false) {
+                return trim($parts['0'],'/');
+            } else {
+                return '';
             }
         }
     }

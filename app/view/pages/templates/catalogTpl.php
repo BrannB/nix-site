@@ -1,3 +1,11 @@
+
+<script src="<?php echo "js/app.js"?>" type="application/javascript" defer></script>
+<div id="app">
+    <product>
+
+    </product>
+</div>
+
 <?php
     foreach ($products['products'] as $item):
 ?>
@@ -30,3 +38,13 @@
     </div>
     <br>
 <?php endforeach; ?>
+<div class="text-right" style="display: block;
+    margin-left: auto;
+    margin-right: auto">
+
+    <?php echo($products['pagination']->getHtml()); ?>
+
+</div>
+
+
+
