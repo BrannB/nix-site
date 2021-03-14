@@ -1,60 +1,65 @@
+<script src="/js/app.js" defer></script>
+<div id="app">
+    <products></products>
+</div>
 
-<script defer>
-    async function getData() {
-        let data = await fetch("http://192.168.10.10/catalog/api")
-        let json = await data.json()
-        return await json
-    }
-    async function mapProducts() {
-        let products = await getData()
-        let messageTpl = ''
-        products.forEach(i => {
-            messageTpl += `
-                <div class="card bg-dark" style="border-color: snow; ">
-                    <img src= "${i.image}" alt="...">
-                    <div class="card-body">
-                        <h2 class="card-title text-center" style="color: snow; background-color: #0c5460">
-                            ${i.name}
-                        </h2>
-                        <h4><p class="card-text text-center">${i.description}</p></h4>
-                        <h3><p class="card-text text-center"><small class="text-muted">
 
-                            </small></p></h3>
-                        <div class="text text-right" >
-                            <h3><b>${i.price + '$'}</b></h3>
-                        <form action="catalog/addProduct" method="post" style="width: 100%">
-            `;
-            if (i.status == 0) {
-                messageTpl += `
-                        <p>Нет в наличии</p>
-                        <button disabled class="btn btn-lg btn-outline-danger" name="addToBucketBtn" value="${i.id}">
-                        `
-            } else if (i.status = 1) {
-                messageTpl += `
-                        <p>В наличии</p>
-                        <button class="btn btn-lg btn-outline-info" name="addToBucketBtn" value="${i.id}">
-                        `
-            }
+<!--<script defer>-->
+<!--    async function getData() {-->
+<!--        let data = await fetch("http://192.168.10.10/catalog/api")-->
+<!--        let json = await data.json()-->
+<!--        return await json-->
+<!--    }-->
+<!--    async function mapProducts() {-->
+<!--        let products = await getData()-->
+<!--        let messageTpl = ''-->
+<!--        products.forEach(i => {-->
+<!--            messageTpl += `-->
+<!--            //     <div class="card bg-dark" style="border-color: snow; ">-->
+<!--            //         <img src= "${i.image}" alt="...">-->
+<!--            //         <div class="card-body">-->
+<!--            //             <h2 class="card-title text-center" style="color: snow; background-color: #0c5460">-->
+<!--            //                 ${i.name}-->
+<!--            //             </h2>-->
+<!--            //             <h4><p class="card-text text-center">${i.description}</p></h4>-->
+<!--            //             <h3><p class="card-text text-center"><small class="text-muted">-->
+<!--            //-->
+<!--            //                 </small></p></h3>-->
+<!--            //             <div class="text text-right" >-->
+<!--            //                 <h3><b>${i.price + '$'}</b></h3>-->
+<!--            //             <form action="catalog/addProduct" method="post" style="width: 100%">-->
+<!--            // `;-->
+<!--            // if (i.status == 0) {-->
+<!--            //     messageTpl += `-->
+<!--            //             <p>Нет в наличии</p>-->
+<!--            //             <button disabled class="btn btn-lg btn-outline-danger" name="addToBucketBtn" value="${i.id}">-->
+<!--            //             `-->
+<!--            // } else if (i.status = 1) {-->
+<!--            //     messageTpl += `-->
+<!--            //             <p>В наличии</p>-->
+<!--            //             <button class="btn btn-lg btn-outline-info" name="addToBucketBtn" value="${i.id}">-->
+<!--            //             `-->
+<!--            // }-->
+<!--            //-->
+<!--            // messageTpl += `-->
+<!--            //                         В корзину-->
+<!--            //                     </button>-->
+<!--            //-->
+<!--            //                 </form>-->
+<!--            //             </div>-->
+<!--            //         </div>-->
+<!--            //     </div>-->
+<!--            //     <br>-->
+<!--            //     `-->
 
-            messageTpl += `
-                                    В корзину
-                                </button>
-
-                            </form>
-                        </div>
-                    </div>
-                </div>
-                <br>
-                `
-
-        })
-        document.getElementById('productsList').innerHTML = messageTpl
-    }
-
-    mapProducts()
-</script>
-
-<div id="productsList"></div>
+<!--        // })-->
+<!--        // document.getElementById('productsList').innerHTML = messageTpl-->
+<!--    // }-->
+<!--    //-->
+<!--    // mapProducts()-->
+<!--</script>-->
+<!---->
+<!--<div id="productsList"></div>-->
 
 <!---->
 <!--<script src="--><?php //echo "js/app.js"?><!--" type="application/javascript" defer></script>-->
