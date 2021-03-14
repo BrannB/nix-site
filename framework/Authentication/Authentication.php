@@ -2,7 +2,7 @@
 
 namespace framework\Authentication;
 
-use app\sessions\Session;
+use framework\sessions\Session;
 use app\services\UserService;
 use app\models\User;
 use app\models\DefaultModel;
@@ -41,6 +41,7 @@ class Authentication
             $this->session->set('uname', $userExist[0]['uname']);
             $this->session->set('name', $userExist[0]['first_name']);
             $this->session->set('email', $userExist[0]['email']);
+            $this->session->set('is_admin', $userExist[0]['is_admin']);
             return true;
         } else {
             return false;

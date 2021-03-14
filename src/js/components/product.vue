@@ -1,12 +1,64 @@
 <template>
-  <div>
-    hello worrld!
+  <div class="container mt-4">
+  <div class="card bg-dark" style="border-color: snow;">
+    <img :src="image" alt="..." style="width: 1048px">
+    <div class="card-body">
+      <h2 class="card-title text-center" style="color: snow; background-color: #0c5460">
+        {{name}}
+      </h2>
+      <h4><p class="card-text text-center">{{description}}</p></h4>
+      <h3><p class="card-text text-center"><small class="text-muted">
+
+      </small></p></h3>
+      <div class="text text-right">
+      <form action="catalog/addProduct" method="post" style="width: 100%">
+        <div v-if="status == 1">
+          <button class="btn btn-lg btn-outline-info" name="addToBucketBtn" :value="id">В корзину</button>
+          <br>Есть в наличии
+        </div>
+        <div v-else>
+          <button disabled class="btn btn-lg btn-outline-danger" name="addToBucketBtn" :value="id">В корзину</button>
+          <br>Нет в наличии
+        </div>
+      </form>
+        <h3><b>${{price}}</b></h3>
+      </div>
+    </div>
   </div>
+  </div>
+
 </template>
 
 <script>
 export default {
-  name: "product"
+  name: "product",
+  props: {
+    id: {
+      type: Number,
+      required: true
+    },
+    image: {
+      type: String,
+      required: true
+    },
+    name: {
+      type: String,
+      required: true
+    },
+    description: {
+      type: String,
+      required: true
+    },
+    price: {
+      type: Number,
+      required: true
+    },
+    status: {
+      type: Number,
+      required: true
+    }
+
+  }
 }
 </script>
 

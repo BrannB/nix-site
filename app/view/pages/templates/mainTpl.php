@@ -1,6 +1,6 @@
 <body class="bg-dark" style=" height: 100%;
  min-width:900px;">
-<main role="main" class="bg-dark d-block w-100">
+<main role="main" class="bg-dark d-block w-100" style="font-family: 'HackRegular';">
     <div id="carouselExampleIndicators" class="carousel slide bg-dark" data-bs-ride="carousel">
         <ol class="carousel-indicators">
             <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"></li>
@@ -83,7 +83,7 @@
 
             <hr class="featurette-divider">
 
-            <div class="row featurette">
+            <div class="row featurette" style="font-family: 'HackRegular';">
                 <div class="col-md-7 order-md-2">
                     <h2 class="featurette-heading text-center" style="background-color: #0c5460;"><b>Step 1:</b> Visit our catalog.</h2>
                     <p class="lead" style="font-size: 40px; font-family: Arial"> Our catalog contains more than 1000 games! We are confident that you will find something to your liking!   </p>
@@ -101,7 +101,7 @@
 
             <hr class="featurette-divider">
 
-            <div class="row featurette">
+            <div class="row featurette" style="font-family: 'HackRegular';">
                 <div class="col-md-7">
                     <h2 class="featurette-heading text-center" style="background-color: #0c5460;"><b>Step 2:</b> Add favourite to the bucket.</h2>
                     <p class="lead" style="font-size: 40px; font-family: Arial"> Did you find something to your liking? It's time to add the game to your cart! It's pretty easy. Just click the "Add to cart" button :) </p>
@@ -121,7 +121,7 @@
 
             <hr class="featurette-divider">
 
-            <div class="row featurette">
+            <div class="row featurette" style="font-family: 'HackRegular';">
                 <div class="col-md-7 order-md-2">
                     <h2 class="featurette-heading text-center" style="background-color: #0c5460;"> <b>Step 3:</b> Make order.</h2>
                     <p class="lead" style="font-size: 40px; font-family: Arial;"> You're pretty close to your goal! It remains only to place an order and pay for it. </p>
@@ -139,9 +139,9 @@
 
             <hr class="featurette-divider">
 
-            <div class="row featurette">
+            <div class="row featurette" style="font-family: 'HackRegular';">
                 <div class="col-md-7">
-                    <h2 class="featurette-heading text-center" style="background-color: #0c5460;"><b>Step 4:</b> Check your email-box</h2>
+                    <h2 class="featurette-heading text-center" style="background-color: #0c5460;"><b>Step 4:</b> Check your email-box.</h2>
                     <p class="lead" style="font-size: 40px; font-family: Arial"> Have you paid for your order and already looking forward to trying out a new game? All that's left is to check your mailbox! You've already been sent your game key! Have a good game :)  </p>
                 </div>
                 <div class="col-md-5">
@@ -161,5 +161,5 @@
 
             <br><br>
         </div>
-
+</main>
 

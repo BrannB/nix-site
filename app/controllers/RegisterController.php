@@ -4,8 +4,8 @@ namespace app\controllers;
 
 use app\tools\Templeater;
 use framework\Authentication\Authentication;
-use framework\models\User;
-use app\sessions\Session;
+use app\models\User;
+use framework\sessions\Session;
 
 class RegisterController
 {

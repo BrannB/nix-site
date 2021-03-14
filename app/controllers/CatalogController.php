@@ -76,5 +76,24 @@ class CatalogController
         return 1;
     }
 
+    public function catalogApi()
+    {
+        $getFromDb = $this->product->getProductsDb();
+        $products = [];
+        foreach ($getFromDb as $key => $value) {
+            $product = [];
+            $product['id'] = $value->id;
+            $product['name'] = $value->name;
+            $product['description'] = $value->description;
+            $product['status'] = $value->status;
+            $product['price'] = $value->price;
+            $product['image'] = $value->image;
 
+            array_push($products, $product);
+        }
+
+        $productsJson = json_encode($products, JSON_UNESCAPED_UNICODE);
+
+        echo $productsJson;
+    }
 }

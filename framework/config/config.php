@@ -1,7 +1,7 @@
 <?php
     return [
-        'host' => "localhost",
-        'user' => 'root',
-        'password' => 'root',
-        'db_name' => 'podluzhnyi_db'
+        'host' => "192.168.10.10",
+        'user' => 'homestead',
+        'password' => 'secret',
+        'db_name' => 'localDB'
     ];

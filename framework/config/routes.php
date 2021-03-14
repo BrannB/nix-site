@@ -18,6 +18,10 @@ Router::addRoute('^catalog/addProduct$', [
     'controller' => 'catalog',
     "action" => "addProduct"
 ]);
+Router::addRoute('^catalog/api$', [
+    'controller' => 'catalog',
+    "action" => "catalogApi"
+]);
 
 //----------------SignIn----------------------
 Router::addRoute('^signin$', [
