@@ -17,6 +17,9 @@
     <div class="row mb-2 bg-dark">
 
         <div class="col-md-6"><BR>
+            <form action="catalog" method="post">
+                <button class="btn btn-secondary" name="sortDesc" type="submit" value="1">SORT BY PRICE DESC</button>
+            </form>
             <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
                 <div class="col p-4 d-flex flex-column position-static">
                     <strong class="d-inline-block mb-2 text-primary">NEW</strong>
@@ -33,6 +36,9 @@
             </div>
         </div>
         <div class="col-md-6"><BR>
+            <form action="catalog" method="post">
+                <button class="btn btn-secondary" name="sortAsc" value="1">SORT BY PRICE ASC</button>
+            </form>
             <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
                 <div class="col p-4 d-flex flex-column position-static">
                     <strong class="d-inline-block mb-2 text-primary">NEW</strong>
@@ -57,9 +63,16 @@
 <main role="main" class="container" style="color: snow">
     <div class="container">
         <div>
-            <h1 class="text-center" style="color: snow; background-color: #0c5460">
-                Catalog
+            <h1 class="text-center" style="color: snow; background-color: #0c5460; color: orange">
+                Welcome to our store!
             </h1>
+            <form action="catalog" method="post">
+                <div class="form-group text-center" style="background-color: #0f6674; font-size: 22px; color: orange">
+                    <b>Search by name</b>
+                    <input type="text" class="form-control bg-white" name="searchByName" placeholder="Search...">
+                    <br>
+                </div>
+            </form>
                 <ui>
                     <?php echo $template ?>
                 </ui>
