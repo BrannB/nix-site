@@ -8,7 +8,7 @@ use PDO;
 class Product extends DefaultModel
 {
     public $db_connect;
-    public $id, $name, $description, $status, $price, $image, $quantity;
+    public $id, $name, $description, $status, $price, $image;
     public DefaultModel $DefaultModel;
 
     public function __construct()
@@ -59,4 +59,20 @@ class Product extends DefaultModel
         $statement->setFetchMode(PDO::FETCH_OBJ);
         return $statement->fetchAll();
     }
+
+    public function countProducts()
+    {
+        $sql = "SELECT *  
+                FROM `product`";
+        $statement = $this->DefaultModel->db_connect->query($sql);
+        $statement->setFetchMode(PDO::FETCH_OBJ);
+        $products = $statement->fetchAll();
+        $counter = 0;
+        foreach ($products as $key => $value)
+        {
+            $counter++;
+        }
+        return $counter;
+    }
+
 }

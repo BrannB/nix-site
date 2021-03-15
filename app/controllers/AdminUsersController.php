@@ -19,6 +19,8 @@ class AdminUsersController
 
     public function Index()
     {
+        if ($_SESSION['is_admin'] == 0)
+            header("Location: ../main");
         $template = 'AdminUsersTpl';
         $layout = 'AdminUsers';
         $users = $this->admin->getAllUsers();
@@ -28,6 +30,8 @@ class AdminUsersController
 
     public function adminCrudUserIndex()
     {
+        if ($_SESSION['is_admin'] == 0)
+            header("Location: ../main");
         $template = 'AdminCrudUserTpl';
         $layout = 'AdminCrudUser';
         $users = $this->admin->getAllUsers();
@@ -49,6 +53,8 @@ class AdminUsersController
 
     public function adminUpdateUserIndex()
     {
+        if ($_SESSION['is_admin'] == 0)
+            header("Location: ../main");
         $id = $_POST['id'];
         $template = 'AdminUpdateUserTpl';
         $layout = 'AdminUpdateUser';
@@ -90,6 +96,8 @@ class AdminUsersController
 
     public function adminGetUserPurchases()
     {
+        if ($_SESSION['is_admin'] == 0)
+            header("Location: ../main");
         if (!empty($_POST)) {
             $template = 'AdminGetUserPurchasesTpl';
             $layout = 'AdminGetUserPurchases';

@@ -17,16 +17,14 @@ class CatalogController
     private Pagination $pagination;
     public Product $product;
     public array $getFromDb;
-    public static $search;
+    public $page;
+
     public function __construct()
     {
         $this->DefaultModel = new DefaultModel();
         $this->session = Session::getInstance();
-        if(!isset($_GET['page']))
-            $_GET['page'] = 1;
-        $this->pagination = new Pagination($_GET['page'], 3, count($this->getAll()));
         $this->product = new Product();
-        self::$search = '';
+        $this->page = isset($_GET['page']) ? (int) $_GET['page'] : 1;
     }
 
     public function getAll()
@@ -53,11 +51,8 @@ class CatalogController
             $template = 'catalogTpl';
             $layout = 'catalog';
         }
-        $pag = $this->pagination;
-        $products = $this->product->getPagination($this->pagination->getPageNumber(), 3);
         $obj = new Templeater();
-        $obj->renderContent($template, $layout,
-            ['products' => $products, 'session' => $this->session, 'pagination' => $pag]);
+        $obj->renderContent($template, $layout);
 
     }
 
@@ -93,9 +88,19 @@ class CatalogController
 
     public function catalogApi()
     {
-        $products = [];
-        $getFromDb = $this->product->getProductsDb();
-        foreach ($getFromDb as $key => $value) {
+        $total = $this->product->countProducts();
+        $page = $this->page;
+        $perpage = 3;
+        $pagination = new Pagination($page, $perpage, $total);
+        $start = $pagination->getPageNumber();
+
+        if (isset($start)) {
+            $products = $this->product->getPagination($start, $perpage);
+        }
+        $arrayProducts['length'] = (int) $total;
+        $arrayProducts['products'] = [];
+
+        foreach ($products as $key => $value) {
             if(isset($_POST['searchByName']))
             {
                 if (strripos($value->name, $_POST['searchByName']) === false)
@@ -108,9 +113,9 @@ class CatalogController
             $product['price'] = $value->price;
             $product['status'] = $value->status;
             $product['image'] = $value->image;
-            array_push($products, $product);
+            array_push($arrayProducts['products'], $product);
         }
-        $productsJson = json_encode($products, JSON_UNESCAPED_UNICODE);
+        $productsJson = json_encode($arrayProducts['products'], JSON_UNESCAPED_UNICODE);
         echo $productsJson;
 
     }

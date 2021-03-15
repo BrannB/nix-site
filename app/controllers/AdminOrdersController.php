@@ -17,6 +17,8 @@ class AdminOrdersController
     }
 
     public function Index() {
+        if ($_SESSION['is_admin'] == 0)
+            header("Location: ../main");
         $template = 'AdminOrdersTpl';
         $layout = 'AdminOrders';
         $orders = $this->admin->getAllOrders();
