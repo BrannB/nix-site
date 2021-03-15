@@ -7,18 +7,21 @@
         {{name}}
       </h2>
       <h4><p class="card-text text-center">{{description}}</p></h4>
-      <h3><p class="card-text text-center"><small class="text-muted">
-
-      </small></p></h3>
+      <div v-if="status == 1" class="text-center" style="color: darkorange;">
+        Есть в наличии
+      </div>
+      <div v-else class="text-center" style="color: red">
+        Нет в наличии
+      </div>
+      <h3><p class="card-text text-center"></p></h3>
       <div class="text text-right">
       <form action="catalog/addProduct" method="post" style="width: 100%">
         <div v-if="status == 1">
+          <br>
           <button class="btn btn-lg btn-outline-info" name="addToBucketBtn" :value="id">В корзину</button>
-          <br>Есть в наличии
         </div>
         <div v-else>
           <button disabled class="btn btn-lg btn-outline-danger" name="addToBucketBtn" :value="id">В корзину</button>
-          <br>Нет в наличии
         </div>
       </form>
         <h3><b>${{price}}</b></h3>

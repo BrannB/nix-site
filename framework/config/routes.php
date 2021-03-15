@@ -22,6 +22,18 @@ Router::addRoute('^catalog/api$', [
     'controller' => 'catalog',
     "action" => "catalogApi"
 ]);
+Router::addRoute('^catalog/descApi$', [
+    'controller' => 'catalog',
+    "action" => "catalogDescApi"
+]);
+Router::addRoute('^catalog/ascApi$', [
+    'controller' => 'catalog',
+    "action" => "catalogAscApi"
+]);
+Router::addRoute('^catalog/searchApi$', [
+    'controller' => 'catalog',
+    "action" => "catalogSearchApi"
+]);
 
 //----------------SignIn----------------------
 Router::addRoute('^signin$', [

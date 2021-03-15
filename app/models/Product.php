@@ -19,7 +19,16 @@ class Product extends DefaultModel
 
     public function getProductsDb()
     {
-        return $this->DefaultModel->get('product', '*');
+        return $this->DefaultModel->get('product', '*', '', "id DESC", '');
+    }
+
+    public function getProductsByPriceDESC()
+    {
+        return $this->DefaultModel->get('product', '*', '', "price DESC", '');
+    }
+    public function getProductsByPriceASC()
+    {
+        return $this->DefaultModel->get('product', '*', '', "price ASC", '');
     }
 
     public function productMapper()
