@@ -96,9 +96,15 @@
                            value="<?php echo $products['product'][0]->status ?>">
                 </div>
                 <div class="col-md-4 mb-3">
+                    Category:
+                    <input type="text" style="width: 600px;" class="form-control" name="category"
+                           value="<?php echo $products['product'][0]->category ?>">
+                </div>
+                <div class="col-md-4 mb-3">
                     <button class="btn btn-info" style="width: 600px;" type="submit" name="id"
                     value="<?php echo $products['product'][0]->id ?>">UPDATE</button>
                 </div>
+
                 <br><br>
             </form>
         </main>

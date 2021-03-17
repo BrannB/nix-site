@@ -34,6 +34,23 @@ Router::addRoute('^catalog/searchApi$', [
     'controller' => 'catalog',
     "action" => "catalogSearchApi"
 ]);
+Router::addRoute('^catalog/sportApi$', [
+    'controller' => 'catalog',
+    "action" => "catalogSportApi"
+]);
+Router::addRoute('^catalog/actionApi$', [
+    'controller' => 'catalog',
+    "action" => "catalogActionApi"
+]);
+Router::addRoute('^catalog/rpgApi$', [
+    'controller' => 'catalog',
+    "action" => "catalogRPGApi"
+]);
+Router::addRoute('^catalog/questApi$', [
+    'controller' => 'catalog',
+    "action" => "catalogQuestApi"
+]);
+
 
 //----------------SignIn----------------------
 Router::addRoute('^signin$', [

@@ -13,72 +13,56 @@
     </mark>
 </h1>
 <br>
-<div class="container bg-dark" style="color: snow;">
-    <div class="row mb-2 bg-dark">
-
-        <div class="col-md-6"><BR>
-
-            <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-                <div class="col p-4 d-flex flex-column position-static">
-                    <strong class="d-inline-block mb-2 text-primary">NEW</strong>
-                    <h3 class="mb-0">Cyberpank 2077</h3>
-                    <div class="mb-1 text-muted">Dec 10</div>
-                    <p class="card-text mb-auto">Cyberpunk 2077 — игра в жанре action/RPG, разработанная и изданная польской студией CD Projekt.</p>
-                </div>
-                <div class="col-auto d-none d-lg-block">
-                    <svg class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg"
-                         preserveAspectRatio="xMidYMid slice" focusable="false"
-                         role="img" aria-label="Placeholder: Thumbnail">
-                        <image height="250px" width="220px" href="https://upload.wikimedia.org/wikipedia/ru/b/bb/%D0%9E%D0%B1%D0%BB%D0%BE%D0%B6%D0%BA%D0%B0_%D0%BA%D0%BE%D0%BC%D0%BF%D1%8C%D1%8E%D1%82%D0%B5%D1%80%D0%BD%D0%BE%D0%B9_%D0%B8%D0%B3%D1%80%D1%8B_Cyberpunk_2077.jpg"> </image></svg>
-                </div>
-            </div>
-            <form action="catalog" method="post" class="text-right">
-                <button class="btn btn-secondary" name="sortAsc" value="1">SORT BY PRICE ASC</button>
-            </form>
-        </div>
-        <div class="col-md-6"><BR>
-
-            <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-                <div class="col p-4 d-flex flex-column position-static">
-                    <strong class="d-inline-block mb-2 text-primary">NEW</strong>
-                    <h3 class="mb-0">Valhalla</h3>
-                    <div class="mb-1 text-muted">Nov 10</div>
-                    <p class="mb-auto">Assassin’s Creed Valhalla — игра в жанре action/RPG, разработанная студией Ubisoft Montreal</p>
-                </div>
-                <div class="col-auto d-none d-lg-block">
-                    <svg class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg"
-                         preserveAspectRatio="xMidYMid slice" focusable="false"
-                         role="img" aria-label="Placeholder: Thumbnail">
-                        <image height="250px" width="235px"
-                               href="https://upload.wikimedia.org/wikipedia/ru/2/26/AC_Valhalla_standard_edition.jpg">
-                        </image>
-                    </svg>
-                </div>
-            </div>
-
-            <form action="catalog" method="post" class="text-left">
-                <button class="btn btn-secondary" name="sortDesc" type="submit" value="1">SORT BY PRICE DESC</button>
-            </form>
-        </div>
-    </div>
-</div>
-
-<main role="main" class="container" style="color: snow">
     <div class="container">
-        <div>
-            <h1 class="text-center" style="color: snow; background-color: #0c5460; color: orange">
-                Welcome to our store!
-            </h1>
-            <form action="catalog" method="post">
-                <div class="form-group text-center" style="background-color: #0f6674; font-size: 22px; color: orange">
-                    <b>Search by name</b>
-                    <input type="text" class="form-control bg-white" name="searchByName" placeholder="Search...">
-                    <br>
-                </div>
-            </form>
-                <ui>
-                    <?php echo $template ?>
-                </ui>
+        <h1 class="text-center" style="color: snow; background-color: #0c5460; color: orange">
+            Welcome to our store!
+        </h1>
+        <form action="catalog" method="post">
+            <div class="form-group text-center" style="background-color: #0f6674; font-size: 22px; color: orange">
+                <b>Search by name</b>
+                <input type="text" class="form-control bg-white" name="searchByName" placeholder="Search...">
+                <br>
+            </div>
+        </form>
+        <div class="container" style="color: snow;">
+            <div class="nav-scroller">
+                <nav class="nav justify-content-center">
+                    <form action="catalog" method="post" class="p-2">
+                        <button class="btn btn-secondary" name="sortAsc" value="1">
+                            SORT BY PRICE ASC
+                        </button>
+                    </form>
+                    <form action="catalog" method="post" class="p-2">
+                        <button class="btn btn-secondary" name="sortDesc" type="submit" value="1">
+                            SORT BY PRICE DESC
+                        </button>
+                    </form>
+                    <form action="catalog" method="post" class="p-2">
+                        <button class="btn btn-secondary" name="Action" type="submit" value="Action">
+                            ACTION
+                        </button>
+                    </form>
+                    <form action="catalog" method="post" class="p-2">
+                        <button class="btn btn-secondary" name="RPG" type="submit" value="RPG">
+                            RPG
+                        </button>
+                    </form>
+                    <form action="catalog" method="post" class="p-2 nav-item">
+                        <button class="btn btn-secondary" name="Quest" type="submit" value="1">
+                            QUEST
+                        </button>
+                    </form>
+                    <form action="catalog" method="post" class="p-2">
+                        <button class="btn btn-secondary" name="Sport" type="submit" value="1">
+                            SPORT
+                        </button>
+                    </form>
+                </nav>
+            </div>
+        </div>
+        <ui>
+            <?php echo $template ?>
+        </ui>
     </div>
 </main>
 

@@ -78,6 +78,8 @@
                         <th>name</th>
                         <th>description</th>
                         <th>price</th>
+                        <th>category</th>
+                        <th>status</th>
                         <th>created_at</th>
                         <th>updated_at</th>
                     </tr>

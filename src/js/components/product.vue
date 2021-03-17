@@ -1,7 +1,7 @@
 <template>
   <div class="container mt-4">
-  <div class="card bg-dark" style="border-color: snow;">
-    <img :src="image" alt="..." style="width: 1048px">
+  <div class="card bg-dark" style="border-color: snow; color: snow">
+    <img :src="image" alt="..." style="width: 1078px">
     <div class="card-body">
       <h2 class="card-title text-center" style="color: snow; background-color: #0c5460">
         {{name}}
