@@ -47,6 +47,18 @@ class CatalogController
         } elseif (isset($_POST['sortAsc'])) {
             $template = 'catalogAscTpl';
             $layout = 'catalog';
+        } elseif (isset($_POST['Action'])) {
+            $template = 'catalogActionTpl';
+            $layout = 'catalog';
+        } elseif (isset($_POST['RPG'])) {
+            $template = 'catalogRPGTpl';
+            $layout = 'catalog';
+        } elseif (isset($_POST['Sport'])) {
+            $template = 'catalogSportTpl';
+            $layout = 'catalog';
+        } elseif (isset($_POST['Quest'])) {
+            $template = 'catalogQuestTpl';
+            $layout = 'catalog';
         } else {
             $template = 'catalogTpl';
             $layout = 'catalog';
@@ -187,4 +199,86 @@ class CatalogController
         $productsJson1 = json_encode($products, JSON_UNESCAPED_UNICODE);
         echo $productsJson1;
     }
+
+    public function catalogActionApi()
+    {
+        $products = [];
+        $getFromDb = $this->product->getProductsDb();
+        foreach ($getFromDb as $key => $value)  {
+            if (strripos($value->category, 'Action') === false)
+                continue;
+            $product = [];
+            $product['id'] = $value->id;
+            $product['name'] = $value->name;
+            $product['description'] = $value->description;
+            $product['price'] = $value->price;
+            $product['status'] = $value->status;
+            $product['image'] = $value->image;
+            array_push($products, $product);
+        }
+        $productsJson1 = json_encode($products, JSON_UNESCAPED_UNICODE);
+        echo $productsJson1;
+    }
+
+    public function catalogRPGApi()
+    {
+        $products = [];
+        $getFromDb = $this->product->getProductsDb();
+        foreach ($getFromDb as $key => $value)  {
+            if (strripos($value->category, 'RPG') === false)
+                continue;
+            $product = [];
+            $product['id'] = $value->id;
+            $product['name'] = $value->name;
+            $product['description'] = $value->description;
+            $product['price'] = $value->price;
+            $product['status'] = $value->status;
+            $product['image'] = $value->image;
+            array_push($products, $product);
+        }
+        $productsJson1 = json_encode($products, JSON_UNESCAPED_UNICODE);
+        echo $productsJson1;
+    }
+
+    public function catalogQuestApi()
+    {
+        $products = [];
+        $getFromDb = $this->product->getProductsDb();
+        foreach ($getFromDb as $key => $value)  {
+            if (strripos($value->category, 'Quest') === false)
+                continue;
+            $product = [];
+            $product['id'] = $value->id;
+            $product['name'] = $value->name;
+            $product['description'] = $value->description;
+            $product['price'] = $value->price;
+            $product['status'] = $value->status;
+            $product['image'] = $value->image;
+            array_push($products, $product);
+        }
+        $productsJson1 = json_encode($products, JSON_UNESCAPED_UNICODE);
+        echo $productsJson1;
+    }
+
+    public function catalogSportApi()
+    {
+        $products = [];
+        $getFromDb = $this->product->getProductsDb();
+        foreach ($getFromDb as $key => $value)  {
+            if (strripos($value->category, 'Sport') === false)
+                continue;
+            $product = [];
+            $product['id'] = $value->id;
+            $product['name'] = $value->name;
+            $product['description'] = $value->description;
+            $product['price'] = $value->price;
+            $product['status'] = $value->status;
+            $product['image'] = $value->image;
+            array_push($products, $product);
+        }
+        $productsJson1 = json_encode($products, JSON_UNESCAPED_UNICODE);
+        echo $productsJson1;
+    }
+
+
 }

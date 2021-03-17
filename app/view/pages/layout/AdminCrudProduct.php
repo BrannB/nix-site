@@ -83,6 +83,8 @@
                         <th>name</th>
                         <th>description</th>
                         <th>price</th>
+                        <th>category</th>
+                        <th>status</th>
                         <th></th>
                         <th></th>
                     </tr>

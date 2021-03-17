@@ -8,7 +8,7 @@ use PDO;
 class Product extends DefaultModel
 {
     public $db_connect;
-    public $id, $name, $description, $status, $price, $image;
+    public $id, $name, $description, $status, $price, $image, $category;
     public DefaultModel $DefaultModel;
 
     public function __construct()
@@ -44,6 +44,7 @@ class Product extends DefaultModel
             $object->status = $product->status;
             $object->price = $product->price;
             $object->image = $product->image;
+            $object->category = $product->category;
 
             array_push($productData, $object);
         }

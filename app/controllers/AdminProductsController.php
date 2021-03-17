@@ -55,11 +55,13 @@ class AdminProductsController
             $image = $_POST['image'];
             $price = $_POST['price'];
             $status = $_POST['status'];
+            $category = $_POST['category'];
+
 
             $this->defautlModel->insert(
                 '`product`',
-                'name, description, image, status, price',
-                [$name, $description, $image, $status, $price]
+                'name, description, image, status, price, category',
+                [$name, $description, $image, $status, $price, $category]
             );
             header("Location: ../adminProducts");
         }
@@ -99,6 +101,7 @@ class AdminProductsController
             $image = $_POST['image'];
             $price = $_POST['price'];
             $status = $_POST['status'];
+            $category = $_POST['category'];
 
             $this->defautlModel->update(
                 'product', [
@@ -106,12 +109,13 @@ class AdminProductsController
                 "description" => $description,
                 "image" => $image,
                 "price" => $price,
-                "status" => $status
+                "status" => $status,
+                "category" => $category
             ],
                 ["id = $id"],
                 ""
             );
-            header("Location: ../adminProducts");
+            header("Location: ../adminCrudProduct");
         }
     }
 
