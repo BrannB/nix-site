@@ -1,19 +1,20 @@
 <template>
+
   <ul class='pagination'>
     <li v-if="currentPage !== 1" class='page-item'>
       <button class='page-link' @click="changePage(1)">
-        <span aria-hidden='true'>&laquo;</span>
+        <span aria-hidden='true'><<</span>
       </button>
     </li>
-    <li v-for="page in totalPages" :key="page"
+    <li v-for="page in 4" :key="page"
         class='page-item'
         @click="changePage(page)"
         :class="{active: currentPage === page}">
-      <button class='page-link'>&raquo</button>
+      <button class='btn btn-light page-link'>{{ page }}</button>
     </li>
-    <li v-if="currentPage !== totalPages" class='page-item'>
-      <button class='page-link' @click="changePage(totalPages)">
-        <span aria-hidden='true'>&raquo;</span>
+    <li v-if="currentPage !== 4" class='page-item'>
+      <button class='page-link' @click="changePage(4)">
+        <span aria-hidden='true'>>></span>
       </button>
     </li>
   </ul>

@@ -13,8 +13,8 @@ export default {
   data() {
     return {
       products: [],
-      pageNumber: 3,
-      length: 0,
+      pageNumber: 1,
+      length: 0
     }
   },
   props: {
@@ -41,9 +41,6 @@ export default {
   },
   watch: {
     pageNumber() {
-      this.getProducts()
-    },
-    sort() {
       this.getProducts()
     },
   },
