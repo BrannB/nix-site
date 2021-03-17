@@ -17,6 +17,8 @@ class AdminPurchasesController
     }
 
     public function Index() {
+        if ($_SESSION['is_admin'] == 0)
+            header("Location: ../main");
         $template = 'AdminPurchasesTpl';
         $layout = 'AdminPurchases';
         $purchases = $this->admin->getAllPurchases();

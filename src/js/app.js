@@ -1,5 +1,6 @@
 window.Vue = require('vue')
 
+Vue.component('pagination', require('./components/pagination.vue').default)
 Vue.component('product', require('./components/product.vue').default)
 Vue.component('productsSearch', require('./components/productsSearch.vue').default)
 Vue.component('products', require('./components/products.vue').default)

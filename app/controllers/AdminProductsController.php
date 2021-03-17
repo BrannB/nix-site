@@ -20,6 +20,8 @@ class AdminProductsController
     }
 
     public function Index() {
+        if ($_SESSION['is_admin'] == 0)
+            header("Location: ../main");
         $template = 'AdminProductsTpl';
         $layout = 'AdminProducts';
         $products = $this->admin->getAllProducts();
@@ -28,6 +30,8 @@ class AdminProductsController
     }
 
     public function adminCrudProductIndex() {
+        if ($_SESSION['is_admin'] == 0)
+            header("Location: ../main");
         $template = 'AdminCrudProductTpl';
         $layout = 'AdminCrudProduct';
         $products = $this->admin->getAllProducts();
@@ -36,6 +40,8 @@ class AdminProductsController
     }
 
     public function adminCreateProductIndex() {
+        if ($_SESSION['is_admin'] == 0)
+            header("Location: ../main");
         $template = 'AdminCreateProductTpl';
         $layout = 'AdminCreateProduct';
         $obj = new Templeater();
@@ -71,6 +77,8 @@ class AdminProductsController
     }
 
     public function adminUpdateProductIndex() {
+        if ($_SESSION['is_admin'] == 0)
+            header("Location: ../main");
         $id =  $_POST['id'];
         $template = 'AdminUpdateProductTpl';
         $layout = 'AdminUpdateProduct';
