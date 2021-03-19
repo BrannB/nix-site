@@ -663,4 +663,5 @@ return array(
     'framework\\DataBase\\DB' => $baseDir . '/framework/DataBase/DB.php',
     'framework\\Mailer\\Mailer' => $baseDir . '/framework/mailer/Mailer.php',
     'framework\\sessions\\Session' => $baseDir . '/framework/sessions/Session.php',
+    'framework\\tools\\Exceptions\\DataBaseException' => $baseDir . '/framework/tools/Exceptions/DataBaseException.php',
 );

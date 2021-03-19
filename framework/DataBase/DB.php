@@ -2,6 +2,7 @@
 
 namespace framework\DataBase;
 use PDO;
+use framework\tools\Exceptions\DataBaseException;
 
 class DB
 {
@@ -37,9 +38,11 @@ class DB
     public function connect()
     {
         $this->configMapper();
-        $db_connect = new PDO("mysql:dbname={$this->db_name};host={$this->host}",
-            $this->user, $this->password);
-        return $db_connect;
+        $db_connect = new PDO("mysql:dbname={$this->db_name};host={$this->host}", $this->user, $this->password);
+        if ($db_connect) {
+            return $db_connect;
+        } else {
+            throw new DataBaseException('DB Error!');
+        }
     }
-
 }

@@ -21,7 +21,7 @@
         if(!isset($value->amount))
             $value->amount = 1;
         ?>
-    <div class="container mt-4">
+    <div class="container mt-4" >
         <div class="card">
             <img src="<?php echo $value->image ?>"  class="card-img-bottom" alt="...">
             <div class="card-body text-center" style=" color: #0c5460; background-image: url(https://convertingcolors.com/gradient-0C5460.svg)">

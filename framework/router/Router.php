@@ -1,6 +1,8 @@
 <?php
 
 use brannLogger\Logger;
+use framework\tools\Exceptions\TplException;
+use framework\tools\Exceptions\LayoutException;
 
 class Router
 {
@@ -43,6 +45,7 @@ class Router
 
     public function matchRoute()
     {
+        $logger = new Logger('errorlogs', 'logger/log');
         if (self::routeCheck(self::removeQueryString(self::getUrl())))
         {
             $controller = ucfirst(self::$route['controller']) . "Controller";
@@ -52,8 +55,15 @@ class Router
             {
                 $object = new $str(self::$route);
                 $object->$act();
+            } else {
+                $logger->warning("Tpl is not found", ["Route for: \"" . self::getUrl() . "\" is not found(Tpl)"]);
+                throw new TplException('Tpl is not found');
             }
+        } else {
+            $logger->warning("Layout not found", ["Route for: \"" . self::getUrl() . "\" is not found(Layout)"]);
+            throw new LayoutException('Layout is not found');
         }
+
     }
 
     public static function removeQueryString($uri) {
@@ -65,6 +75,7 @@ class Router
                 return '';
             }
         }
+        else return false;
     }
 }
 

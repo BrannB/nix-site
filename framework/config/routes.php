@@ -119,8 +119,6 @@ Router::addRoute('^purchasePayment$', [
     "action" => "pay"
 ]);
 
-
-
 //----------------Admin-----------------------
 Router::addRoute('^adminUsers$', [
     'controller' => 'adminUsers',
@@ -187,6 +185,9 @@ Router::addRoute('^adminGetUserPurchases$', [
     "action" => "adminGetUserPurchases"
 ]);
 
-
-
+//----------------AboutUs---------------------
+Router::addRoute('^aboutus$', [
+    'controller' => 'aboutus',
+    "action" => "index"
+]);
 
