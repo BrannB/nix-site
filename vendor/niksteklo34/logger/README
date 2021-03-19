@@ -1,0 +1,11 @@
+Logger from Nikita Miroshnichenko
+
+How to use?
+
+<?php
+
+use Niksteklo34\Logger\Logger;
+
+$log = new Logger('fileName', "from_server_root_to_your_file.log");
+$log->warning('Foo');
+$log->error("Bar", ['foo'=>'bar']);

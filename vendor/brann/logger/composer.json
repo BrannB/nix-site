@@ -1,0 +1,19 @@
+{
+  "name": "brann/logger",
+  "description": "My logger",
+  "type": "library",
+  "minimum-stability": "dev",
+  "authors": [
+    {
+      "name": "brann",
+      "email": "email@example.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "brannLogger\\": "src/"
+    }
+  },
+  "require": {
+  }
+}
