@@ -5,22 +5,30 @@
     require_once "../vendor/autoload.php";
     require_once '../framework/config/routes.php';
 
-    use app\tools\Exceptions\NewException;
-    use framework\sessions\Session;
     use brannLogger\Logger;
+    use framework\Authentication\Authentication;
+    use framework\tools\Exceptions\TplException;
+    use framework\tools\Exceptions\LayoutException;
+    use framework\tools\Exceptions\DataBaseException;
 
-    $logger = new Logger("errorlogs", "../app/tools/logger/log");
+    $logger = new Logger("errorlogs", "../framework/tools/logger/log");
+    $session = new Authentication();
+    $session->session->start();
 
-    $session = new Session();
-    $session->start();
     try {
         $router = new Router();
         $router->matchRoute();
-        if (!$router)
-        {
-            throw new Exception();
-        }
-    } catch (NewException $error) {
-        $logger->warning("All is crashed");
+    } catch (DataBaseException $errors) {
+        $logger->warning($errors->getMessage());
+        echo $errors->getMessage();
+    } catch (TplException $errors) {
+        $logger->warning('Tpl is not found');
+        echo $errors->getMessage();
+    } catch (LayoutException $errors) {
+        $logger->warning('Layout not found');
+        echo $errors->getMessage();
+    } catch (Exception $errors) {
+        $logger->warning('');
+        echo $errors->getMessage();
     }
 

@@ -4,7 +4,7 @@ namespace framework\tools\Exceptions;
 
 use Exception;
 
-class NewException extends Exception
+class DataBaseException extends Exception
 {
 
 }

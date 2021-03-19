@@ -36,13 +36,16 @@ class ComposerStaticInit52ee5796dfa1d310fab2c50a2c4d3b22
         array (
             'models\\' => 7,
         ),
+        'f' => 
+        array (
+            'framework\\tools\\Exceptions\\' => 27,
+        ),
         'b' => 
         array (
             'brannLogger\\' => 12,
         ),
         'a' => 
         array (
-            'app\\tools\\Exceptions\\' => 21,
             'app\\tools\\' => 10,
             'app\\controllers\\' => 16,
         ),
@@ -129,13 +132,13 @@ class ComposerStaticInit52ee5796dfa1d310fab2c50a2c4d3b22
         array (
             0 => __DIR__ . '/../..' . '/app/models',
         ),
+        'framework\\tools\\Exceptions\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/framework/tools/Exceptions',
+        ),
         'brannLogger\\' => 
         array (
             0 => __DIR__ . '/..' . '/brann/logger/src',
-        ),
-        'app\\tools\\Exceptions\\' => 
-        array (
-            0 => __DIR__ . '/../..' . '/framework/tools/Exceptions',
         ),
         'app\\tools\\' => 
         array (
@@ -976,6 +979,7 @@ class ComposerStaticInit52ee5796dfa1d310fab2c50a2c4d3b22
         'framework\\DataBase\\DB' => __DIR__ . '/../..' . '/framework/DataBase/DB.php',
         'framework\\Mailer\\Mailer' => __DIR__ . '/../..' . '/framework/mailer/Mailer.php',
         'framework\\sessions\\Session' => __DIR__ . '/../..' . '/framework/sessions/Session.php',
+        'framework\\tools\\Exceptions\\DataBaseException' => __DIR__ . '/../..' . '/framework/tools/Exceptions/DataBaseException.php',
     );
 
     public static function getInitializer(ClassLoader $loader)

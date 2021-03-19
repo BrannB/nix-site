@@ -8,8 +8,8 @@ $baseDir = dirname($vendorDir);
 return array(
     'phpDocumentor\\Reflection\\' => array($vendorDir . '/phpdocumentor/reflection-common/src', $vendorDir . '/phpdocumentor/reflection-docblock/src', $vendorDir . '/phpdocumentor/type-resolver/src'),
     'models\\' => array($baseDir . '/app/models'),
+    'framework\\tools\\Exceptions\\' => array($baseDir . '/framework/tools/Exceptions'),
     'brannLogger\\' => array($vendorDir . '/brann/logger/src'),
-    'app\\tools\\Exceptions\\' => array($baseDir . '/framework/tools/Exceptions'),
     'app\\tools\\' => array($baseDir . '/framework/tools'),
     'app\\controllers\\' => array($baseDir . '/app/controllers'),
     'Webmozart\\Assert\\' => array($vendorDir . '/webmozart/assert/src'),

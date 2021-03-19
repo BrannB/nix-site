@@ -4,3 +4,5 @@ phpcbf.phar
 phpcs.phar
 composer.phar
 .DS_Store
+node_modules/
+

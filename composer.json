@@ -25,14 +25,15 @@
             "framework/sessions/Session.php",
             "framework/DataBase/DB.php",
             "framework/mailer/Mailer.php",
-            "framework/pagination/Pagination.php"
+            "framework/pagination/Pagination.php",
+            "framework/tools/Exceptions/DataBaseException.php"
         ],
         "psr-4": {
             "app\\tools\\": "framework/tools/",
-            "app\\tools\\Exceptions\\": "framework/tools/Exceptions/",
             "Authentication\\": "framework/Authentication/",
             "app\\controllers\\": "app/controllers/",
-            "models\\": "app/models/"
+            "models\\": "app/models/",
+            "framework\\tools\\Exceptions\\": "framework/tools/Exceptions/"
         },
         "require": []
     },
@@ -44,6 +45,7 @@
         "swiftmailer/swiftmailer": "^6.0",
         "codeception/module-phpbrowser": "^1.0.0",
         "codeception/module-asserts": "^1.0.0",
-        "codeception/codeception": "*"
+        "codeception/codeception": "*",
+        "ext-pdo": "*"
     }
 }

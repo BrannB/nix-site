@@ -5,6 +5,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
     <link rel = "stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" media="screen" href="https://fontlibrary.org//face/hack" type="text/css"/>
+    <link rel="stylesheet" href="public/css/footer.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
 <nav class="navbar navbar-expand-md navbar-dark bg-dark" style="font-size: 25px;">
     <div class="container-fluid">
@@ -21,7 +22,7 @@
                     <a class="nav-link" href="catalog"> Games Catalog </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#"> About us </a>
+                    <a class="nav-link" href="aboutus"> About us </a>
                 </li>
             </ul>
             <?php if (!isset($_SESSION['uname'])): ?>
